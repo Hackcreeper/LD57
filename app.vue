@@ -15,4 +15,6 @@
     </TresMesh>
     <TresAmbientLight :intensity="1" />
   </TresCanvas>
+
+  <div class="fixed bottom-0 left-0 right-0 h-64 bg-red-300">UI</div>
 </template>
