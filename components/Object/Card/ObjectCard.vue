@@ -28,7 +28,7 @@ const customComponentName = computed(() => {
   <div
     ref="card"
     :style="style"
-    class="w-[100px] h-[140px] fixed select-none"
+    class="w-[70px] h-[100px] fixed select-none"
   >
     <Component
       :is="customComponentName"
