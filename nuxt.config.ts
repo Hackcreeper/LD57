@@ -2,18 +2,29 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-11-01',
-  devtools: { enabled: true },
   modules: [
     '@nuxt/eslint',
-    '@tresjs/nuxt',
     '@nuxt/fonts',
     '@nuxt/ui',
     '@pinia/nuxt',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    '@nuxt/content',
+    '@nuxt/icon',
   ],
+  ssr: false,
+  components: [{
+    path: '~/components/',
+    global: true,
+  }],
+  devtools: { enabled: true },
+  css: ['~/assets/css/main.css'],
+  compatibilityDate: '2024-11-01',
   vite: {
     plugins: [tailwindcss()],
   },
-  css: ['~/assets/css/main.css'],
+  eslint: {
+    config: {
+      stylistic: true,
+    },
+  },
 })
