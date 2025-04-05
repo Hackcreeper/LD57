@@ -1,58 +1,38 @@
 <script lang="ts" setup>
-import { Html } from '@tresjs/cientos'
-import { DragControls } from 'three/addons/controls/DragControls.js'
-import * as THREE from 'three'
 import type { BoardCard } from '~/types/Board'
 
-defineProps<{
-  card: BoardCard
+const props = defineProps<{
+  boardCard: BoardCard
 }>()
 
-const boardStore = useBoardStore()
+// This refs are used to define was is draggable and in which bounds can be dragged
+const cardEl = useTemplateRef<HTMLDivElement>('card')
+const container = inject<Readonly<Ref<HTMLDivElement>>>('container')
 
-// This `shallowRef` returns an instance of the underlying mesh object of THREE
-// which is required to work with internals that are not (yet) available as
-// Vue Components
-const cardRef = shallowRef()
-const { camera } = useTresContext()
+const { style } = useDraggable(cardEl, {
+  initialValue: { x: props.boardCard.x, y: props.boardCard.z },
+  containerElement: container,
+})
 
-// For performance reasons we initialize a vector here, so that we don't need to
-// recreate a new vector each frame that a card is dragged. The content of the vector
-// will be overridden by the `onDrag` event listener. Please don't use it anywhere
-const worldPosition = new THREE.Vector3()
+// This allow to have special vue components for cards
+const specialComponents = import.meta.glob('~/components/Object/Card/Visual/*.vue')
+const customComponentName = computed(() => {
+  const fullString = `/components/Object/Card/Visual/ObjectCardVisual${props.boardCard.card.label}.vue`
+  if (specialComponents[fullString]) return `ObjectCardVisual${props.boardCard.card.label}`
 
-// We need to wait for the mounting to happen, so that the `cardRef` is actually set
-onMounted(() => {
-  // The `transformGroup` is required, because otherwise we could drag all blender sub-objects
-  // instead of the whole model. 😅
-  const controls = new DragControls([cardRef.value], camera.value!, document.body)
-  controls.transformGroup = true
-
-  controls.addEventListener('drag', (event) => {
-    // Make sure the cards are not changing their "height"
-    event.object.position.y = 0
-
-    // TODO: Actually do something with the information
-    boardStore.getIntersectingCards(worldPosition.x, worldPosition.z)
-  })
+  return `ObjectCardVisualDefault`
 })
 </script>
 
 <template>
-  <TresGroup
-    ref="cardRef"
-    :position="[card.x, 0, card.z]"
+  <div
+    ref="card"
+    :style="style"
+    class="w-[100px] h-[140px] fixed select-none"
   >
-    <TresMesh ref="cardRef">
-      <GLTFModel path="/models/Card.glb" />
-      <Html
-        transform
-        :position="[-.8, .5, 0]"
-        :scale="[0.75, 0.75, 0.75]"
-        :rotation="[1.5708, 0, 1.5708]"
-      >
-        <ObjectCardContent :card="card.card" />
-      </Html>
-    </TresMesh>
-  </TresGroup>
+    <Component
+      :is="customComponentName"
+      :board-card="boardCard"
+    />
+  </div>
 </template>

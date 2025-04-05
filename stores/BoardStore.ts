@@ -1,6 +1,5 @@
 import type { CardsCollectionItem } from '@nuxt/content'
 import type { BoardCard } from '~/types/Board'
-import { CardHeight, CardWidth } from '~/util/consts'
 
 export const useBoardStore = defineStore('board', () => {
   // This is the actual board
@@ -12,23 +11,11 @@ export const useBoardStore = defineStore('board', () => {
       card,
       x,
       z,
-      highlight: false,
     })
-  }
-
-  function getIntersectingCards(x: number, z: number) {
-    // Fuck raycasting, we do it the simple old way. Iterating through each card, like a pro 😈
-    for (const card of board.value) {
-      // Simple AABB collision detection
-      if (x > card.x - CardWidth / 2 && x < card.x + CardWidth / 2 && z > card.z - CardHeight / 2 && z < card.z + CardHeight / 2) {
-        card.highlight = true
-      }
-    }
   }
 
   return {
     board: readonly(board),
     addCard,
-    getIntersectingCards,
   }
 })

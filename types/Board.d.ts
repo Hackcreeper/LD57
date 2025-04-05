@@ -10,7 +10,4 @@ export type BoardCard = {
   // Position in world-space
   x: number
   z: number
-
-  // Should the card be highlighted?
-  highlight: boolean
 }

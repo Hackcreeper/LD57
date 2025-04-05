@@ -13,6 +13,10 @@ export default defineNuxtConfig({
     '@nuxt/icon',
   ],
   ssr: false,
+  components: [{
+    path: '~/components/',
+    global: true,
+  }],
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
   compatibilityDate: '2024-11-01',

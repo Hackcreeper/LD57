@@ -1,38 +1,30 @@
 <script setup lang="ts">
-import { CardHeight, CardWidth } from './util/consts'
-
 const cardStore = useCardStore()
 const boardStore = useBoardStore()
+
+const container = templateRef<HTMLDivElement>('container')
+provide('container', container)
 
 await cardStore.init()
 
 const { board } = storeToRefs(boardStore)
 
 // Temporary until real cards are added
-boardStore.addCard(cardStore.getRandomCard(), 0, 0)
-boardStore.addCard(cardStore.getRandomCard(), CardWidth + 1, 0)
-boardStore.addCard(cardStore.getRandomCard(), CardWidth + 1, CardHeight + 1)
+boardStore.addCard(cardStore.getRandomCard(), 100, 20)
+boardStore.addCard(cardStore.getRandomCard(), 400, 20)
+boardStore.addCard(cardStore.getRandomCard(), 400, 400)
 </script>
 
 <template>
-  <div class="w-screen aspect-10/10">
-    <TresCanvas
-      clear-color="black"
-      preset="realistic"
+  <div
+    ref="container"
+    class="w-screen aspect-1/1 bg-zinc-700"
+  >
+    <template
+      v-for="card in board"
+      :key="card.uniqueId"
     >
-      <Stars />
-      <TresPerspectiveCamera
-        :fov="60"
-        :position="[10, -20, 0]"
-        :rotation="[1.5708, 0.4, 1.5708]"
-      />
-      <Suspense
-        v-for="card in board"
-        :key="card.uniqueId"
-      >
-        <ObjectCard :card="card" />
-      </Suspense>
-      <TresAmbientLight :intensity="1" />
-    </TresCanvas>
+      <ObjectCard :board-card="card" />
+    </template>
   </div>
 </template>
