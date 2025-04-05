@@ -1,0 +1,29 @@
+name: 'Test Package'
+on: ['pull_request']
+
+jobs:
+  eslint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run eslint
+        run: bun run eslint
+
+  tsc:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run typecheck
+        run: bun run scripts/typecheck.ts
