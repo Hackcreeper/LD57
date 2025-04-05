@@ -1,20 +1,38 @@
-<template>
-  <TresCanvas window-size clear-color="gray">
-    <TresPerspectiveCamera />
-    <TresMesh>
-      <TresTorusGeometry :args="[2.4, 0.1, 60, 6]" />
-      <TresMeshBasicMaterial color="black" />
-    </TresMesh>
-    <TresMesh>
-      <TresTorusGeometry :args="[1.5, 0.1, 60, 6]" />
-      <TresMeshBasicMaterial color="blue" />
-    </TresMesh>
-    <TresMesh>
-      <TresTorusGeometry :args="[.5, 0.1, 60, 6]" />
-      <TresMeshBasicMaterial color="pink" />
-    </TresMesh>
-    <TresAmbientLight :intensity="1" />
-  </TresCanvas>
+<script setup lang="ts">
+import { CardHeight, CardWidth } from './util/consts'
 
-  <div class="fixed bottom-0 left-0 right-0 h-64 bg-red-300">UI</div>
+const cardStore = useCardStore()
+const boardStore = useBoardStore()
+
+await cardStore.init()
+
+const { board } = storeToRefs(boardStore)
+
+// Temporary until real cards are added
+boardStore.addCard(cardStore.getRandomCard(), 0, 0)
+boardStore.addCard(cardStore.getRandomCard(), CardWidth + 1, 0)
+boardStore.addCard(cardStore.getRandomCard(), CardWidth + 1, CardHeight + 1)
+</script>
+
+<template>
+  <div class="w-screen aspect-10/10">
+    <TresCanvas
+      clear-color="black"
+      preset="realistic"
+    >
+      <Stars />
+      <TresPerspectiveCamera
+        :fov="60"
+        :position="[10, -20, 0]"
+        :rotation="[1.5708, 0.4, 1.5708]"
+      />
+      <Suspense
+        v-for="card in board"
+        :key="card.uniqueId"
+      >
+        <ObjectCard :card="card" />
+      </Suspense>
+      <TresAmbientLight :intensity="1" />
+    </TresCanvas>
+  </div>
 </template>
