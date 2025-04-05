@@ -4,7 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
-    '@tresjs/nuxt',
     '@nuxt/fonts',
     '@nuxt/ui',
     '@pinia/nuxt',
