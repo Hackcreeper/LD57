@@ -1,4 +1,5 @@
 {
   "label": "Fuel",
-  "icon": "material-symbols:gas-meter-outline"
+  "icon": "material-symbols:gas-meter-outline",
+  "type": "resource"
 }

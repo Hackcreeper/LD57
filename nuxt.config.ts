@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/content',
     '@nuxt/icon',
+    '@therealironduck/ducktory',
   ],
   ssr: false,
   components: [{

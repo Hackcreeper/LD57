@@ -9,10 +9,14 @@ defineProps<{
 <template>
   <ObjectCardVisualDefault
     :board-card="boardCard"
-    class="rounded-xl !bg-amber-400"
+    class="rounded-xl"
   >
     <template #icon>
-      Icon
+      <Icon
+        class="!mt-2 bg-amber-500"
+        :name="boardCard.card.icon"
+        size="3em"
+      />
     </template>
   </ObjectCardVisualDefault>
 </template>
