@@ -12,9 +12,8 @@ export const useBoardStore = defineStore('board', () => {
       card,
       x,
       z,
-      stackedCards: [],
+      stackedCard: undefined,
       parentCard: undefined,
-      stackLevel: 0,
     })
   }
 
@@ -33,16 +32,13 @@ export const useBoardStore = defineStore('board', () => {
 
   function stackCard(card: BoardCard, parentCard: BoardCard): { x: number, y: number } {
     card.parentCard = parentCard
-
-    parentCard.stackedCards.push(card)
+    parentCard.stackedCard = card
 
     const x = parentCard.x
-    const y = parentCard.z + 30
+    const y = parentCard.z + DeckStackPadding
 
     card.x = x
     card.z = y
-
-    card.stackLevel = parentCard.stackLevel + 1
 
     return {
       x,
@@ -53,9 +49,8 @@ export const useBoardStore = defineStore('board', () => {
   function unstackCard(card: BoardCard, position: { x: number, y: number }) {
     if (!card.parentCard) return
 
-    card.parentCard.stackedCards = card.parentCard.stackedCards.filter(c => c !== card)
+    card.parentCard.stackedCard = undefined
     card.parentCard = undefined
-    card.stackLevel = 0
 
     card.x = position.x
     card.z = position.y

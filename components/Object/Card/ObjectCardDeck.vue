@@ -28,15 +28,10 @@ const { style, isDragging } = useDraggable(deckEl, {
     boardStore.setCardPosition(props.boardCard, position.x, position.y)
 
     // Update the position of all stacked cards
-    props.boardCard.stackedCards.forEach((card, index) => {
-      boardStore.setCardPosition(card, position.x, position.y + (index + 1) * DeckStackPadding)
-    })
+    if (!props.boardCard.stackedCard) return // Can never happen
+    boardStore.setCardPosition(props.boardCard.stackedCard, position.x, position.y + DeckStackPadding)
   },
 })
-
-// Handle active card (which card would I interact with)
-const mouseOver = ref(false)
-useActiveCard(props.boardCard, mouseOver, isDragging)
 
 // This allow to have special vue components for cards
 const { getVisualComponentName } = useCardVisual()
@@ -48,8 +43,6 @@ const { getVisualComponentName } = useCardVisual()
     class="absolute"
     :class="{ 'z-10 scale-90 transition-transform': isDragging }"
     :style="style"
-    @mouseenter="mouseOver = true"
-    @mouseleave="mouseOver = false"
   >
     <div
       :class="CardClasses"
@@ -63,12 +56,9 @@ const { getVisualComponentName } = useCardVisual()
     </div>
 
     <ObjectCardDeckStacked
-      v-for="(card, index) in boardCard.stackedCards"
-      :key="'stack-' + card.uniqueId"
-      :board-card="card"
+      v-if="boardCard.stackedCard"
+      :board-card="boardCard.stackedCard"
       :parent-card="boardCard"
-      :is-last-card="index === boardCard.stackedCards.length - 1"
-      :position="{ x: 0, y: (index + 1) * DeckStackPadding }"
     />
   </div>
 </template>

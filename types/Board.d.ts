@@ -12,10 +12,7 @@ export type BoardCard = {
   x: number
   z: number
 
-  // These are all the cards, that are stacked on top of this card
-  stackedCards: BoardCard[]
-
-  // This is the `parent` where I am stacked on top
+  // Information about what card is stacked on top of this one and which card is my parent
+  stackedCard: BoardCard | undefined
   parentCard: BoardCard | undefined
-  stackLevel: number
 }

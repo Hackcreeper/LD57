@@ -4,8 +4,6 @@ import type { BoardCard } from '~/types/Board'
 const props = defineProps<{
   boardCard: BoardCard
   parentCard: BoardCard
-  position: { x: number, y: number }
-  isLastCard: boolean
 }>()
 
 // Usage of stores
@@ -17,10 +15,7 @@ const cardEl = useTemplateRef<HTMLDivElement>('card')
 const container = inject<Readonly<Ref<HTMLDivElement>>>('container')
 
 const { style, isDragging } = useDraggable(cardEl, {
-  initialValue: props.position,
-
-  // Only allow to move the top card of deck
-  disabled: () => !props.isLastCard,
+  initialValue: { x: 0, y: DeckStackPadding },
 
   // Make sure the card is always in the bounds of the container
   containerElement: container,

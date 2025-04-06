@@ -8,11 +8,11 @@ defineProps<{
 
 <template>
   <ObjectCardSingle
-    v-if="boardCard.stackedCards.length === 0 && !boardCard.parentCard"
+    v-if="!boardCard.stackedCard && !boardCard.parentCard"
     :board-card="boardCard"
   />
   <ObjectCardDeck
-    v-else-if="boardCard.stackedCards.length > 0"
+    v-else-if="boardCard.stackedCard"
     :board-card="boardCard"
   />
 </template>

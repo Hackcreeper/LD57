@@ -29,6 +29,6 @@ export const useCardStore = defineStore('card', () => {
     init,
     getRandomCard,
     getCardByIdentifier,
-    cards: readonly(cards),
+    cards,
   }
 })
