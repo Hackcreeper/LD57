@@ -3,5 +3,19 @@
   "label": "Space-Pirate",
   "icon": "game-icons:pirate-skull",
   "health": 25,
-  "type": "enemy"
+  "type": "enemy",
+  "strength": 8,
+  "interactions": [
+    {
+      "card": "worker",
+      "infinite": true,
+      "time": 3,
+      "showHealthInsteadOfTime": true,
+      "actions": [
+        {
+          "type": "fight"
+        }
+      ]
+    }
+  ]
 }

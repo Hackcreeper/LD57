@@ -1,4 +1,10 @@
 <script setup lang="ts">
+withDefaults(defineProps<{
+  fixedAspect?: boolean
+}>(), {
+  fixedAspect: true,
+})
+
 const cardStore = useCardStore()
 const boardStore = useBoardStore()
 const levelStore = useLevelStore()
@@ -14,7 +20,8 @@ const { board } = storeToRefs(boardStore)
 <template>
   <div
     ref="container"
-    class="w-full !h-[1000px] aspect-16/9 bg-pattern select-none"
+    class="w-full  bg-pattern select-none"
+    :class="{ 'aspect-16/9': fixedAspect, 'h-full': !fixedAspect }"
   >
     <template
       v-for="card in board"

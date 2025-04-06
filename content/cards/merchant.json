@@ -3,5 +3,18 @@
   "label": "Merchant",
   "icon": "arcticons:family-space",
   "health": 15,
-  "type": "merchant"
+  "type": "merchant",
+  "interactions": [
+    {
+      "card": "metal",
+      "consume": true,
+      "actions": [
+        {
+          "type": "spawn",
+          "card": "money",
+          "amount": 2
+        }
+      ]
+    }
+  ]
 }
