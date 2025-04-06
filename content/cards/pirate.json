@@ -1,4 +1,5 @@
 {
+  "identifier": "pirate",
   "label": "Space-Pirate",
   "icon": "game-icons:pirate-skull",
   "health": 25,

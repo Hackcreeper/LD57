@@ -1,4 +1,5 @@
 {
+  "identifier": "worker",
   "label": "Worker",
   "icon": "material-symbols:man-rounded",
   "health": 20,

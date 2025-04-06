@@ -1,0 +1,16 @@
+{
+  "identifier": "money",
+  "label": "Money",
+  "icon": "material-symbols:money-bag-outline",
+  "type": "resource",
+  "interactions": [
+    {
+      "card": "money",
+      "actions": [
+        {
+          "type": "combine"
+        }
+      ]
+    }
+  ]
+}
