@@ -1,0 +1,6 @@
+{
+  "identifier": "trade-link",
+  "label": "Trade Link",
+  "icon": "carbon:connection-signal",
+  "type": "building"
+}

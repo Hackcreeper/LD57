@@ -37,7 +37,7 @@ onMounted(() => {
 <template>
   <div
     ref="container"
-    class="bg-pattern h-100 relative"
+    class="bg-pattern h-270 relative"
   >
     <template
       v-for="card in board"

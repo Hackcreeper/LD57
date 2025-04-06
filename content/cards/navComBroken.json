@@ -1,5 +1,5 @@
 {
-  "identifier": "broken-navcom",
+  "identifier": "navcom-broken",
   "label": "Broken NavCom",
   "icon": "carbon:navaid-ndb-dme",
   "type": "building"

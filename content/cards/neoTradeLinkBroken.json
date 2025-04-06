@@ -1,0 +1,6 @@
+{
+  "identifier": "trade-link",
+  "label": "Broken Trade Link",
+  "icon": "carbon:connection-signal-off",
+  "type": "building"
+}

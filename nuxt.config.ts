@@ -19,7 +19,7 @@ export default defineNuxtConfig({
   }],
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
-  compatibilityDate: '2024-11-01',
+  compatibilityDate: '2025-04-06',
   nitro: {
     preset: 'bun',
   },
@@ -30,5 +30,13 @@ export default defineNuxtConfig({
     config: {
       stylistic: true,
     },
+  },
+  icon: {
+    customCollections: [
+      {
+        prefix: 'custom',
+        dir: './assets/custom-icons',
+      },
+    ],
   },
 })
