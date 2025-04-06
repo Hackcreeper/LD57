@@ -1,0 +1,7 @@
+{
+  "identifier": "soldier",
+  "label": "Soldier",
+  "icon": "custom:soldier",
+  "health": 30,
+  "type": "person"
+}
