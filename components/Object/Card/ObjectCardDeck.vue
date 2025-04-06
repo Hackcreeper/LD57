@@ -60,7 +60,7 @@ const customComponentName = computed(() => {
 <template>
   <div
     ref="deck"
-    class="fixed select-none"
+    class="absolute select-none"
     :class="{ 'z-10 scale-90 transition-transform': isDragging }"
     :style="style"
     @mouseenter="mouseOver = true"

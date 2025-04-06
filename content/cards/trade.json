@@ -1,5 +1,6 @@
 {
   "identifier": "trade",
   "label": "Trade",
-  "icon": "material-symbols:storefront-outline"
+  "icon": "material-symbols:storefront-outline",
+  "type": "merchant"
 }

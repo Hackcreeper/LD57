@@ -83,10 +83,9 @@ watch(isActive, (active) => {
   <div
     ref="card"
     :style="style"
-    class="w-[70px] h-[100px] fixed select-none"
+    class="w-[70px] h-[100px] absolute select-none"
     :class="{
       'z-10 scale-90 transition-transform pointer-events-none': dragging,
-      'z-10': boardCard.parentCard,
     }"
   >
     <Component

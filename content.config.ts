@@ -10,7 +10,7 @@ export default defineContentConfig({
         label: z.string(),
         icon: z.string().default('material-symbols:man-rounded'),
         health: z.number().gte(0).lte(20).optional(),
-
+        type: z.enum(['person', 'resource', 'building', 'merchant', 'enemy']),
         interactions: z.array(z.object({
           cards: z.array(z.object({
             identifier: z.string(),

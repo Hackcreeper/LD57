@@ -2,5 +2,6 @@
   "identifier": "worker",
   "label": "Worker",
   "icon": "material-symbols:man-rounded",
-  "health": 20
+  "health": 20,
+  "type": "person"
 }

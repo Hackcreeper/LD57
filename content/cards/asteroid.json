@@ -3,6 +3,7 @@
   "label": "Asteroid",
   "icon": "tabler:meteor",
   "health": 10,
+  "type": "enemy",
 
   "interactions": [
     {

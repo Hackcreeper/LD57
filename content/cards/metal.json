@@ -1,5 +1,6 @@
 {
   "identifier": "metal",
   "label": "Metal",
-  "icon": "icon-park-outline:heavy-metal"
+  "icon": "icon-park-outline:heavy-metal",
+  "type": "resource"
 }

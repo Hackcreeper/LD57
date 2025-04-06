@@ -1,5 +1,6 @@
 {
   "identifier": "money",
   "label": "Money",
-  "icon": "material-symbols:money-bag-outline"
+  "icon": "material-symbols:money-bag-outline",
+  "type": "resource"
 }
