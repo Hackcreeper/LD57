@@ -5,6 +5,8 @@ import { hit } from './actions/hit'
 import { replace } from './actions/replace'
 import { combine } from './actions/combine'
 import { fight } from './actions/fight'
+import { trade } from './actions/trade'
+import { destroy } from './actions/destroy'
 import type { BoardCard } from '~/types/Board'
 import type { Action } from '~/types/Action'
 
@@ -15,6 +17,8 @@ const allActions: { [key: string]: Action } = {
   replace,
   combine,
   fight,
+  trade,
+  destroy,
 }
 
 export const useAction = () => {

@@ -4,6 +4,9 @@
   "icon": "icon-park-outline:heavy-metal",
   "type": "resource",
   "amount": 1,
+  "buyable": true,
+  "buyableMaxAmount": 20,
+  "price": 10,
   "interactions": [
     {
       "card": "metal",

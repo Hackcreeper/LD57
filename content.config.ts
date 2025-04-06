@@ -20,6 +20,9 @@ export default defineContentConfig({
         amount: z.number().gte(0).optional(),
         type: z.enum(['person', 'resource', 'building', 'merchant', 'enemy', 'event']),
         strength: z.number().gte(0).optional(),
+        buyable: z.boolean().default(false),
+        buyableMaxAmount: z.number().gte(1).default(1),
+        price: z.number().gt(0).optional(),
         interactions: z.array(z.object({
           card: z.string(),
           consume: z.boolean().default(false),

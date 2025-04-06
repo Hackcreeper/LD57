@@ -3,5 +3,7 @@
   "label": "Medic Instr.",
   "icon": "custom:medic-instructor",
   "health": 15,
-  "type": "person"
+  "type": "person",
+  "buyable": true,
+  "price": 800
 }

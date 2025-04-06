@@ -3,5 +3,7 @@
   "label": "Soldier",
   "icon": "custom:soldier",
   "health": 30,
-  "type": "person"
+  "type": "person",
+  "buyable": true,
+  "price": 600
 }

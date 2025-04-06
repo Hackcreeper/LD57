@@ -1,4 +1,5 @@
 import type { CardsCollectionItem } from '@nuxt/content'
+import { tradeCard } from '~/composables/special-cards/tradeCard'
 import type { BoardCard } from '~/types/Board'
 
 export const useBoardStore = defineStore('board', () => {
@@ -9,18 +10,23 @@ export const useBoardStore = defineStore('board', () => {
   const board = ref<BoardCard[]>([])
   const activeCard = ref<BoardCard | undefined>()
 
-  function addCard(card: CardsCollectionItem, x: number, z: number, isNew: boolean = true) {
+  function addCard(card: CardsCollectionItem, x: number, z: number, isNew: boolean = true, amount: number | undefined = undefined) {
     const { x: cX, y: cY } = clampPosition(x, z)
 
-    board.value.push({
+    const newCard = {
       uniqueId: crypto.randomUUID(), // We iterate through each card, so we need something unique for Vue
       card,
       x: cX,
       z: cY,
       isNew,
       currentHealth: card.health ?? null,
-      amount: card.amount ?? null,
-    })
+      amount: card.amount ? (amount ?? card.amount) : null,
+    }
+    board.value.push(newCard)
+
+    if (newCard.card.identifier === 'trade') {
+      tradeCard(newCard)
+    }
   }
 
   function removeCard(card: BoardCard) {

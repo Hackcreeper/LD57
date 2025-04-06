@@ -25,9 +25,16 @@ export const useCardStore = defineStore('card', () => {
     return cards.value[Math.floor(Math.random() * cards.value.length)]
   }
 
+  const getRandomBuyableCard = (): CardsCollectionItem => {
+    const filteredCards = cards.value.filter(card => card.buyable)
+
+    return filteredCards[Math.floor(Math.random() * filteredCards.length)]
+  }
+
   return {
     init,
     getRandomCard,
+    getRandomBuyableCard,
     getCardByIdentifier,
     cards,
   }
