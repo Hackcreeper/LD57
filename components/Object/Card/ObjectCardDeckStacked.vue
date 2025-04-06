@@ -51,7 +51,7 @@ const classes = computed(() => {
   let classes = `absolute ${CardClasses}`
 
   if (isDragging.value) {
-    classes += ' z-10 scale-90 pointer-events-none'
+    classes += ' z-10 pointer-events-none'
   }
 
   return classes
@@ -66,7 +66,7 @@ const classes = computed(() => {
   >
     <div
       class="w-full h-full"
-      :class="{ absolute: movedOnce }"
+      :class="{ 'absolute': movedOnce, 'scale-90': isDragging }"
       :style="offset"
     >
       <Component

@@ -12,10 +12,7 @@ export default defineContentConfig({
         health: z.number().gte(0).lte(20).optional(),
         type: z.enum(['person', 'resource', 'building', 'merchant', 'enemy']),
         interactions: z.array(z.object({
-          cards: z.array(z.object({
-            identifier: z.string(),
-            amount: z.number().gte(0).default(1),
-          })),
+          card: z.string(),
           actions: z.array(z.object({
             type: z.enum(['spawn', 'damage']),
             card: z.string().optional(),

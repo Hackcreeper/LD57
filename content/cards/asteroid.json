@@ -8,10 +8,7 @@
   "interactions": [
     {
       "time": 5,
-      "cards": [{
-        "identifier": "worker",
-        "amount": 1
-      }],
+      "card": "worker",
       "actions": [
         {
           "type": "spawn",
@@ -23,13 +20,6 @@
           "amount": 5
         }
       ]
-    }
-  ],
-  "death": [
-    {
-      "type": "spawn",
-      "card": "metal",
-      "amount": 3
     }
   ]
 }

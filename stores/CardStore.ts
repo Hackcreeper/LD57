@@ -2,6 +2,7 @@ import type { CardsCollectionItem } from '@nuxt/content'
 
 export const CardWidth = 70
 export const CardHeight = 100
+// w-[70px] h-[100px]
 export const CardClasses = `w-[${CardWidth}px] h-[${CardHeight}px]`
 export const DeckStackPadding = 22
 
