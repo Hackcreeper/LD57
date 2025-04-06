@@ -5,23 +5,36 @@ const props = defineProps<{
   boardCard: BoardCard
   parentCard: BoardCard
   position: { x: number, y: number }
+  isLastCard: boolean
 }>()
 
 // Handle dragging card decks
+const movedOnce = ref(false)
 const cardEl = useTemplateRef<HTMLDivElement>('card')
 const container = inject<Readonly<Ref<HTMLDivElement>>>('container')
 
 const { style, isDragging } = useDraggable(cardEl, {
   initialValue: props.position,
 
-  disabled: false,
+  // Only allow to move the top card of deck
+  disabled: () => !props.isLastCard,
 
   // Make sure the card is always in the bounds of the container
   containerElement: container,
+
+  onMove: () => {
+    movedOnce.value = true
+  },
+
+  onEnd: () => {
+    // movedOnce.value = false
+  },
 })
 
 // Calculate the offset based on the parent card
 const offset = computed(() => {
+  if (!movedOnce.value) return ''
+
   return `left: -${props.parentCard.x}px; top: -${props.parentCard.z}px;`
 })
 
@@ -42,11 +55,12 @@ const customComponentName = computed(() => {
     :style="style"
     class="absolute w-[70px] h-[100px] select-none"
     :class="{
-      'z-15 transition-transform pointer-events-none': isDragging,
+      'z-20 transition-transform pointer-events-none': isDragging,
     }"
   >
     <div
-      :class="{ absolute: isDragging }"
+      class="w-full h-full"
+      :class="{ absolute: movedOnce }"
       :style="offset"
     >
       <Component
