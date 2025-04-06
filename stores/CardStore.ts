@@ -11,6 +11,10 @@ export const useCardStore = defineStore('card', () => {
     cards.value = data.value ?? []
   }
 
+  const getCardByIdentifier = (identifier: string): CardsCollectionItem | undefined => {
+    return cards.value.find(card => card.identifier === identifier)
+  }
+
   const getRandomCard = (): CardsCollectionItem => {
     return cards.value[Math.floor(Math.random() * cards.value.length)]
   }
@@ -18,6 +22,7 @@ export const useCardStore = defineStore('card', () => {
   return {
     init,
     getRandomCard,
+    getCardByIdentifier,
     cards: readonly(cards),
   }
 })

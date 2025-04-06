@@ -1,0 +1,34 @@
+{
+  "identifier": "asteroid",
+  "label": "Asteroid",
+  "icon": "tabler:meteor",
+  "health": 10,
+
+  "interactions": [
+    {
+      "time": 5,
+      "cards": [{
+        "identifier": "worker",
+        "amount": 1
+      }],
+      "actions": [
+        {
+          "type": "spawn",
+          "card": "metal",
+          "amount": 1
+        },
+        {
+          "type": "damage",
+          "amount": 5
+        }
+      ]
+    }
+  ],
+  "death": [
+    {
+      "type": "spawn",
+      "card": "metal",
+      "amount": 3
+    }
+  ]
+}

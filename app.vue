@@ -10,12 +10,14 @@ await cardStore.init()
 const { board } = storeToRefs(boardStore)
 
 // Temporary until real cards are added
-boardStore.addCard(cardStore.getRandomCard(), 100, 20)
-boardStore.addCard(cardStore.getRandomCard(), 400, 20)
-boardStore.addCard(cardStore.getRandomCard(), 400, 400)
-boardStore.addCard(cardStore.getRandomCard(), 500, 400)
-boardStore.addCard(cardStore.getRandomCard(), 800, 400)
-boardStore.addCard(cardStore.getRandomCard(), 400, 400)
+boardStore.addCard(cardStore.getCardByIdentifier('worker') ?? cardStore.getRandomCard(), 100, 100)
+boardStore.addCard(cardStore.getCardByIdentifier('worker') ?? cardStore.getRandomCard(), 100, 300)
+boardStore.addCard(cardStore.getCardByIdentifier('asteroid') ?? cardStore.getRandomCard(), 400, 200)
+boardStore.addCard(cardStore.getCardByIdentifier('asteroid') ?? cardStore.getRandomCard(), 480, 400)
+boardStore.addCard(cardStore.getCardByIdentifier('duck') ?? cardStore.getRandomCard(), 750, 300)
+boardStore.addCard(cardStore.getCardByIdentifier('trade') ?? cardStore.getRandomCard(), 850, 50)
+boardStore.addCard(cardStore.getCardByIdentifier('money') ?? cardStore.getRandomCard(), 850, 420)
+boardStore.addCard(cardStore.getCardByIdentifier('money') ?? cardStore.getRandomCard(), 950, 420)
 </script>
 
 <template>
