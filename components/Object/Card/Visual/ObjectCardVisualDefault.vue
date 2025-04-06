@@ -74,6 +74,13 @@ onMounted(() => {
             :max="boardCard.card.health"
           />
         </slot>
+        <slot name="amount">
+          <div
+            v-if="boardCard.amount"
+            class="text-center block text-black -translate-y-1 text-xs"
+            v-text="boardCard.amount"
+          />
+        </slot>
       </div>
     </div>
   </div>

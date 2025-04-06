@@ -2,5 +2,16 @@
   "identifier": "metal",
   "label": "Metal",
   "icon": "icon-park-outline:heavy-metal",
-  "type": "resource"
+  "type": "resource",
+  "amount": 1,
+  "interactions": [
+    {
+      "card": "metal",
+      "actions": [
+        {
+          "type": "combine"
+        }
+      ]
+    }
+  ]
 }
