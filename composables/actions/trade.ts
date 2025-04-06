@@ -8,6 +8,12 @@ export const trade: Action = (_action: CardsCollectionItem['interactions'][0]['a
   assert(baseCard.buyableCard !== undefined, 'Action `trade` requires the base card to have a buyable card!')
   assert(baseCard.buyableAmount !== undefined, 'Action `trade` requires the base card to have a buyable amount!')
 
+  if (baseCard.buyableAmount > 3) {
+    const { x, y } = getDropCoordinates(baseCard.x, baseCard.z)
+    boardStore.addCard(baseCard.buyableCard, x, y, true, baseCard.buyableAmount)
+    return
+  }
+
   for (let i = 0; i < baseCard.buyableAmount; i++) {
     const { x, y } = getDropCoordinates(baseCard.x, baseCard.z)
     boardStore.addCard(baseCard.buyableCard, x, y)

@@ -10,7 +10,7 @@ export const useBoardStore = defineStore('board', () => {
   const board = ref<BoardCard[]>([])
   const activeCard = ref<BoardCard | undefined>()
 
-  function addCard(card: CardsCollectionItem, x: number, z: number, isNew: boolean = true) {
+  function addCard(card: CardsCollectionItem, x: number, z: number, isNew: boolean = true, amount: number | undefined = undefined) {
     const { x: cX, y: cY } = clampPosition(x, z)
 
     const newCard = {
@@ -20,7 +20,7 @@ export const useBoardStore = defineStore('board', () => {
       z: cY,
       isNew,
       currentHealth: card.health ?? null,
-      amount: card.amount ?? null,
+      amount: card.amount ? (amount ?? card.amount) : null,
     }
     board.value.push(newCard)
 
