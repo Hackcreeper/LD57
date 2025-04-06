@@ -1,5 +1,11 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
+const actionsType = z.array(z.object({
+  type: z.enum(['spawn', 'damage']),
+  card: z.string().optional(),
+  amount: z.number().optional(),
+}))
+
 export default defineContentConfig({
   collections: {
     cards: defineCollection({
@@ -13,13 +19,11 @@ export default defineContentConfig({
         type: z.enum(['person', 'resource', 'building', 'merchant', 'enemy']),
         interactions: z.array(z.object({
           card: z.string(),
-          actions: z.array(z.object({
-            type: z.enum(['spawn', 'damage']),
-            card: z.string().optional(),
-            amount: z.number().optional(),
-          })),
+          consume: z.boolean().default(false),
+          actions: actionsType,
           time: z.number().positive().default(0),
         })),
+        onDeath: actionsType,
       }),
     }),
   },

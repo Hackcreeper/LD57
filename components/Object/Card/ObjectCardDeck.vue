@@ -7,11 +7,12 @@ const props = defineProps<{
 
 // Stores
 const boardStore = useBoardStore()
+const levelStore = useLevelStore()
 
 // Handle dragging card decks
 const hoveringOverBottomCard = ref(false)
 const deckEl = useTemplateRef<HTMLDivElement>('deck')
-const container = inject<Readonly<Ref<HTMLDivElement>>>('container')
+const { container } = storeToRefs(levelStore)
 
 const { style, isDragging } = useDraggable(deckEl, {
   initialValue: { x: props.boardCard.x, y: props.boardCard.z },
@@ -44,6 +45,12 @@ const { getVisualComponentName } = useCardVisual()
     :class="{ 'z-10 scale-90 transition-transform': isDragging }"
     :style="style"
   >
+    <UProgress
+      v-if="boardCard.currentInteraction"
+      :model-value="boardCard.interactionProgress ?? 0"
+      class="absolute -top-4"
+      color="neutral"
+    />
     <div
       :class="CardClasses"
       @mouseenter="hoveringOverBottomCard = true"
