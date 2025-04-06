@@ -3,5 +3,17 @@
   "label": "Worker",
   "icon": "material-symbols:man-rounded",
   "health": 20,
-  "type": "person"
+  "type": "person",
+  "interactions": [
+    {
+      "card": "worker",
+      "time": 10,
+      "actions": [
+        {
+          "type": "spawn",
+          "card": "baby"
+        }
+      ]
+    }
+  ]
 }

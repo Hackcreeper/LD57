@@ -3,5 +3,18 @@
   "label": "Baby",
   "icon": "hugeicons:baby-02",
   "health": 2,
-  "type": "person"
+  "type": "person",
+  "interactions": [
+    {
+      "card": "duck",
+      "consume": true,
+      "time": 6,
+      "actions": [
+        {
+          "type": "replace",
+          "card": "worker"
+        }
+      ]
+    }
+  ]
 }

@@ -20,14 +20,23 @@
           "amount": 5
         }
       ]
+    },
+    {
+      "card": "baby",
+      "actions": [
+        {
+          "type": "hit",
+          "amount": 2
+        }
+      ]
     }
   ],
 
   "onDeath": [
     {
       "type": "spawn",
-      "card": "duck",
-      "amount": 10
+      "card": "metal",
+      "amount": 2 
     }
   ]
 }

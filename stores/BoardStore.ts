@@ -17,10 +17,8 @@ export const useBoardStore = defineStore('board', () => {
       card,
       x: cX,
       z: cY,
-      stackedCard: undefined,
-      parentCard: undefined,
       isNew,
-      currentHealth: card.health,
+      currentHealth: card.health ?? null,
     })
   }
 
@@ -59,8 +57,20 @@ export const useBoardStore = defineStore('board', () => {
     }
   }
 
+  function cancelInteraction(card: BoardCard) {
+    if (!card.parentCard) return
+    if (!card.parentCard.interactionTimeoutId) return
+
+    clearTimeout(card.parentCard.interactionTimeoutId)
+    clearInterval(card.parentCard.interactionIntervalId)
+    card.parentCard.interactionTimeoutId = undefined
+    card.parentCard.interactionFinishAt = undefined
+    card.parentCard.currentInteraction = undefined
+  }
+
   function unstackCard(card: BoardCard, position: { x: number, y: number }) {
     if (!card.parentCard) return
+    cancelInteraction(card)
 
     card.parentCard.stackedCard = undefined
     card.parentCard = undefined
@@ -94,5 +104,6 @@ export const useBoardStore = defineStore('board', () => {
     stackCard,
     unstackCard,
     markCardAsOld,
+    cancelInteraction,
   }
 })

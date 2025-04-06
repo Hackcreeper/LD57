@@ -27,6 +27,11 @@ const { style, isDragging } = useDraggable(cardEl, {
     movedOnce.value = true
   },
 
+  // As soon as we start dragging, cancel the interaction
+  onStart: () => {
+    boardStore.cancelInteraction(props.boardCard)
+  },
+
   onEnd: (position) => {
     boardStore.unstackCard(props.boardCard, position)
   },

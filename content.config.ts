@@ -19,6 +19,7 @@ export default defineContentConfig({
         type: z.enum(['person', 'resource', 'building', 'merchant', 'enemy']),
         interactions: z.array(z.object({
           card: z.string(),
+          consume: z.boolean().default(false),
           actions: actionsType,
           time: z.number().positive().default(0),
         })),

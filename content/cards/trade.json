@@ -2,5 +2,29 @@
   "identifier": "trade",
   "label": "Trade",
   "icon": "material-symbols:storefront-outline",
-  "type": "merchant"
+  "type": "merchant",
+  "interactions": [
+    {
+      "card": "metal",
+      "consume": true,
+      "actions": [
+        {
+          "type": "spawn",
+          "card": "money",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "card": "money",
+      "consume": true,
+      "actions": [
+        {
+          "type": "spawn",
+          "card": "fuel",
+          "amount": 1
+        }
+      ]
+    }
+  ]
 }
