@@ -8,7 +8,7 @@ export const useDemoCards = () => {
     const padding = 20
 
     watchOnce(container, () => {
-      const maxWidth = (container.value?.clientWidth ?? 100) - padding
+      const maxWidth = (container.value?.clientWidth ?? 100)
       let row = 0
       let column = 0
       let index = 1

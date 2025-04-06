@@ -11,7 +11,7 @@ spawn(cards.value.map(c => c.identifier))
 </script>
 
 <template>
-  <div class="relative">
-    <LevelBoard />
+  <div class="relative h-200">
+    <LevelBoard :fixed-aspect="false" />
   </div>
 </template>
