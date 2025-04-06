@@ -60,10 +60,10 @@ onMounted(() => {
     </slot>
 
     <div class="flex justify-center">
-      <div class="flex-col">
+      <div>
         <slot name="icon">
           <div
-            class="text-black !mt-2"
+            class="text-black !mt-2 justify-center"
           >
             <Icon
               :name="boardCard.card.icon"

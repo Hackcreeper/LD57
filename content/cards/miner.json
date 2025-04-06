@@ -3,5 +3,7 @@
   "label": "Miner",
   "icon": "custom:miner",
   "health": 22,
-  "type": "person"
+  "type": "person",
+  "buyable": true,
+  "price": 450
 }

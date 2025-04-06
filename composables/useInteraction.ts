@@ -1,4 +1,5 @@
 import type { CardsCollectionItem } from '@nuxt/content'
+import { canInteractWithTrade } from './special-cards/tradeCard'
 import type { BoardCard } from '~/types/Board'
 
 export const useInteraction = (draggingCard: BoardCard) => {
@@ -20,6 +21,10 @@ export const useInteraction = (draggingCard: BoardCard) => {
     if (!interaction) return false
     if (!interaction.amount) return true
     if (!draggingCard.amount) return false
+
+    if (boardCard.card.identifier === 'trade') {
+      return canInteractWithTrade(boardCard, draggingCard)
+    }
 
     return draggingCard.amount >= interaction.amount
   }
@@ -84,7 +89,7 @@ export const useInteraction = (draggingCard: BoardCard) => {
           boardStore.removeCard(draggingCard)
         }
         else {
-          const amount = boardCard.currentInteraction?.amount ?? 1
+          const amount = boardCard.buyablePrice ?? boardCard.currentInteraction?.amount ?? 1
           draggingCard.amount -= amount
 
           if (draggingCard.amount <= 0) {

@@ -2,5 +2,8 @@
   "identifier": "duck",
   "label": "Duck",
   "icon": "icon-park-outline:duck",
-  "type": "event"
+  "type": "person",
+  "buyable": true,
+  "buyableMaxAmount": 3,
+  "price": 25
 }

@@ -12,7 +12,18 @@
         {
           "type": "spawn",
           "card": "money",
-          "amount": 2
+          "amount": 5
+        }
+      ]
+    },
+    {
+      "card": "fuel",
+      "consume": true,
+      "actions": [
+        {
+          "type": "spawn",
+          "card": "money",
+          "amount": 25 
         }
       ]
     }

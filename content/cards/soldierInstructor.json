@@ -3,5 +3,7 @@
   "label": "Soldier Instr.",
   "icon": "custom:soldier-instructor",
   "health": 30,
-  "type": "person"
+  "type": "person",
+  "buyable": true,
+  "price": 1200
 }

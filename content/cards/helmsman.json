@@ -3,5 +3,7 @@
   "label": "Helmsman",
   "icon": "custom:helmsman",
   "health": 20,
-  "type": "person"
+  "type": "person",
+  "buyable": true,
+  "price": 500
 }

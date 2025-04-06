@@ -7,12 +7,13 @@
     {
       "card": "money",
       "consume": true,
-      "amount": 4,
+      "amount": 1,
       "actions": [
         {
-          "type": "spawn",
-          "card": "fuel",
-          "amount": 1
+          "type": "trade"
+        },
+        {
+          "type": "destroy"
         }
       ]
     }

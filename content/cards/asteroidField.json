@@ -2,7 +2,7 @@
   "identifier": "asteroid-field",
   "label": "Asteroid Field",
   "icon": "mdi:focus-field",
-  "type": "building",
+  "type": "event",
   "interactions": [
     {
       "card": "miner",
