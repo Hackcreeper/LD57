@@ -6,7 +6,7 @@ export const useBoardStore = defineStore('board', () => {
   const board = ref<BoardCard[]>([])
   const activeCard = ref<BoardCard | undefined>()
 
-  function addCard(card: CardsCollectionItem, x: number, z: number): void {
+  function addCard(card: CardsCollectionItem, x: number, z: number, isNew: boolean = true) {
     board.value.push({
       uniqueId: crypto.randomUUID(), // We iterate through each card, so we need something unique for Vue
       card,
@@ -14,7 +14,13 @@ export const useBoardStore = defineStore('board', () => {
       z,
       stackedCard: undefined,
       parentCard: undefined,
+      isNew,
+      currentHealth: card.health,
     })
+  }
+
+  function removeCard(card: BoardCard) {
+    board.value = board.value.filter(c => c.uniqueId !== card.uniqueId)
   }
 
   function setActiveCard(card: BoardCard) {
@@ -56,14 +62,20 @@ export const useBoardStore = defineStore('board', () => {
     card.z = position.y
   }
 
+  function markCardAsOld(card: BoardCard) {
+    card.isNew = false
+  }
+
   return {
     board: board,
     activeCard: activeCard,
     addCard,
+    removeCard,
     setActiveCard,
     unsetActiveCard,
     setCardPosition,
     stackCard,
     unstackCard,
+    markCardAsOld,
   }
 })

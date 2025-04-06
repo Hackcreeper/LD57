@@ -21,5 +21,13 @@
         }
       ]
     }
+  ],
+
+  "onDeath": [
+    {
+      "type": "spawn",
+      "card": "duck",
+      "amount": 10
+    }
   ]
 }
