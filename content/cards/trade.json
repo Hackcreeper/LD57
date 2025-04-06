@@ -18,6 +18,7 @@
     {
       "card": "money",
       "consume": true,
+      "amount": 4,
       "actions": [
         {
           "type": "spawn",

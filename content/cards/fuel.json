@@ -2,5 +2,16 @@
   "identifier": "fuel",
   "label": "Fuel",
   "icon": "material-symbols:gas-meter-outline",
-  "type": "resource"
+  "type": "resource",
+  "amount": 1,
+  "interactions": [
+    {
+      "card": "fuel",
+      "actions": [
+        {
+          "type": "combine"
+        }
+      ]
+    }
+  ]
 }

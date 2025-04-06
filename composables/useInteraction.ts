@@ -1,3 +1,4 @@
+import type { CardsCollectionItem } from '@nuxt/content'
 import type { BoardCard } from '~/types/Board'
 
 export const useInteraction = (draggingCard: BoardCard) => {
@@ -8,12 +9,23 @@ export const useInteraction = (draggingCard: BoardCard) => {
     return (boardCard.card.interactions ?? []).map(interaction => interaction.card)
   }
 
+  const getInteraction = (boardCard: BoardCard): CardsCollectionItem['interactions'][0] | undefined => {
+    return boardCard.card.interactions?.find(interaction => interaction.card === draggingCard.card.identifier)
+  }
+
   const hasInteractionWith = (boardCard: BoardCard): boolean => {
-    return getAvailableInteractions(boardCard).includes(draggingCard.card.identifier)
+    if (boardCard.uniqueId === draggingCard.uniqueId) return false
+
+    const interaction = getInteraction(boardCard)
+    if (!interaction) return false
+    if (!interaction.amount) return true
+    if (!draggingCard.amount) return false
+
+    return draggingCard.amount >= interaction.amount
   }
 
   const interact = (boardCard: BoardCard) => {
-    const interaction = boardCard.card.interactions?.find(interaction => interaction.card === draggingCard.card.identifier)
+    const interaction = getInteraction(boardCard)
     if (!interaction) {
       console.error('Interaction not found')
       return
@@ -65,9 +77,19 @@ export const useInteraction = (draggingCard: BoardCard) => {
         boardStore.removeCard(draggingCard)
       }
 
-      // If the card should be consumed, remove it without triggering onDeath
+      // If the card should be consumed, reduce the amount or remove it without triggering onDeath if amount <= 0
       if (boardCard.currentInteraction?.consume) {
-        boardStore.removeCard(draggingCard)
+        if (draggingCard.amount === null) {
+          boardStore.removeCard(draggingCard)
+        }
+        else {
+          const amount = boardCard.currentInteraction?.amount ?? 1
+          draggingCard.amount -= amount
+
+          if (draggingCard.amount <= 0) {
+            boardStore.removeCard(draggingCard)
+          }
+        }
       }
 
       boardStore.unstackCard(draggingCard, { x, y })

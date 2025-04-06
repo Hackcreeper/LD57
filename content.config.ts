@@ -21,6 +21,7 @@ export default defineContentConfig({
         interactions: z.array(z.object({
           card: z.string(),
           consume: z.boolean().default(false),
+          amount: z.number().gte(0).optional(),
           actions: actionsType,
           time: z.number().positive().default(0),
         })),
