@@ -1,5 +1,6 @@
 {
   "identifier": "duck",
   "label": "Duck",
-  "icon": "icon-park-outline:duck"
+  "icon": "icon-park-outline:duck",
+  "type": "event"
 }

@@ -2,5 +2,5 @@
   "identifier": "distress-Signal",
   "label": "Distress Signal",
   "icon": "oui:security-signal-detected",
-  "type": "building"
+  "type": "event"
 }

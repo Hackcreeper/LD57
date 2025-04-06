@@ -1,6 +1,7 @@
 {
   "identifier": "hyperdrive-broken",
   "label": "Broken Hyperdrive",
-  "icon": "wpf:maintenance",
+  "icon": "game-icons:hypersonic-bolt",
+    "iconColor": "red",
   "type": "building"
 }

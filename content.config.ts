@@ -15,9 +15,10 @@ export default defineContentConfig({
         identifier: z.string(),
         label: z.string(),
         icon: z.string().default('material-symbols:man-rounded'),
+        iconColor: z.string().optional().default('#000000'),
         health: z.number().gte(0).lte(20).optional(),
         amount: z.number().gte(0).optional(),
-        type: z.enum(['person', 'resource', 'building', 'merchant', 'enemy']),
+        type: z.enum(['person', 'resource', 'building', 'merchant', 'enemy', 'event']),
         interactions: z.array(z.object({
           card: z.string(),
           consume: z.boolean().default(false),
