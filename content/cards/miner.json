@@ -1,0 +1,7 @@
+{
+  "identifier": "miner",
+  "label": "Miner",
+  "icon": "custom:miner",
+  "health": 22,
+  "type": "person"
+}

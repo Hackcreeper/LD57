@@ -1,0 +1,7 @@
+{
+  "identifier": "medic-instructor",
+  "label": "Medic Instr.",
+  "icon": "custom:medic-instructor",
+  "health": 15,
+  "type": "person"
+}

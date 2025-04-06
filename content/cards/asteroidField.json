@@ -1,0 +1,6 @@
+{
+  "identifier": "asteroid-field",
+  "label": "Asteroid Field",
+  "icon": "mdi:focus-field",
+  "type": "building"
+}

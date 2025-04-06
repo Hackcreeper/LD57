@@ -1,0 +1,7 @@
+{
+  "identifier": "helmsman",
+  "label": "Helmsman",
+  "icon": "custom:helmsman",
+  "health": 20,
+  "type": "person"
+}
