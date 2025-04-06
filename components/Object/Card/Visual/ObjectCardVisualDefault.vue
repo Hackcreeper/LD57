@@ -11,19 +11,23 @@ const maxWidth = 70 - 16
 
 const styleCardHeader = computed(() => {
   return {
-    person: 'bg-zinc-400',
-    resource: 'bg-sky-300',
-    enemy: 'bg-red-400',
-    merchant: 'bg-amber-300',
+    person: 'bg-sky-400',
+    resource: 'bg-zinc-400',
+    enemy: 'bg-red-500',
+    merchant: 'bg-amber-400',
+    building: 'bg-[#D6A77A]',
+    event: 'bg-green-400',
   }[props.boardCard.card.type as string] ?? 'bg-stone-200'
 })
 
 const styleCardBody = computed(() => {
   return {
-    person: 'bg-zinc-200',
-    resource: 'bg-sky-100',
+    person: 'bg-sky-200',
+    resource: 'bg-zinc-200',
     enemy: 'bg-red-300',
     merchant: 'bg-amber-200',
+    building: 'bg-[#F3D9B1]',
+    event: 'bg-green-200',
   }[props.boardCard.card.type as string] ?? 'bg-stone-100'
 })
 
@@ -63,6 +67,7 @@ onMounted(() => {
           >
             <Icon
               :name="boardCard.card.icon"
+              :style="'color:' + boardCard.card.iconColor"
               size="3em"
             />
           </div>
