@@ -11,4 +11,8 @@ export type BoardCard = {
   // Position in world-space
   x: number
   z: number
+
+  // Information about what card is stacked on top of this one and which card is my parent
+  stackedCard: BoardCard | undefined
+  parentCard: BoardCard | undefined
 }
