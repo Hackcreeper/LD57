@@ -5,17 +5,6 @@
   "type": "merchant",
   "interactions": [
     {
-      "card": "metal",
-      "consume": true,
-      "actions": [
-        {
-          "type": "spawn",
-          "card": "money",
-          "amount": 2
-        }
-      ]
-    },
-    {
       "card": "money",
       "consume": true,
       "amount": 4,
