@@ -7,6 +7,7 @@ const props = defineProps<{
 
 // Use stores & composables
 const boardStore = useBoardStore()
+const levelStore = useLevelStore()
 const { activeCard } = storeToRefs(boardStore) // This is the card, the user is currently hovering above
 
 const { hasInteractionWith, interact } = useInteraction(props.boardCard)
@@ -14,7 +15,7 @@ const { hasInteractionWith, interact } = useInteraction(props.boardCard)
 // Handle dragging single cards
 const originalPosition = ref({ x: 0, y: 0 })
 const cardEl = useTemplateRef<HTMLDivElement>('card')
-const container = inject<Readonly<Ref<HTMLDivElement>>>('container')
+const { container } = storeToRefs(levelStore)
 
 const { style, position: cardPosition, isDragging } = useDraggable(cardEl, {
   initialValue: { x: props.boardCard.x, y: props.boardCard.z },

@@ -8,11 +8,12 @@ const props = defineProps<{
 
 // Usage of stores
 const boardStore = useBoardStore()
+const levelStore = useLevelStore()
 
 // Handle dragging card decks
 const movedOnce = ref(false)
 const cardEl = useTemplateRef<HTMLDivElement>('card')
-const container = inject<Readonly<Ref<HTMLDivElement>>>('container')
+const { container } = storeToRefs(levelStore)
 
 const { style, isDragging } = useDraggable(cardEl, {
   initialValue: { x: 0, y: DeckStackPadding },
