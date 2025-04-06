@@ -5,9 +5,8 @@ const { spawn } = useDemoCards()
 
 const cardStore = useCardStore()
 await cardStore.init()
-const { cards } = storeToRefs(cardStore)
 
-spawn(cards.value.map(c => c.identifier))
+spawn(['worker', 'worker', 'baby', 'pirate', 'pirate'])
 </script>
 
 <template>
