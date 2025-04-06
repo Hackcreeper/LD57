@@ -5,7 +5,6 @@ const props = defineProps<{
   boardCard: BoardCard
 }>()
 
-const currentHealth = ref(props.boardCard.card.health)
 const text = useTemplateRef<HTMLElement>('text')
 
 const maxWidth = 70 - 16
@@ -71,7 +70,7 @@ onMounted(() => {
         <slot name="health">
           <UProgress
             v-if="boardCard.card.health"
-            v-model="currentHealth"
+            :model-value="boardCard.currentHealth"
             :max="boardCard.card.health"
           />
         </slot>

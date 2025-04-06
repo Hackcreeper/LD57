@@ -7,14 +7,15 @@ const props = defineProps<{
 
 // Use stores & composables
 const boardStore = useBoardStore()
+const levelStore = useLevelStore()
 const { activeCard } = storeToRefs(boardStore) // This is the card, the user is currently hovering above
 
-const { hasInteractionWith } = useInteraction(props.boardCard)
+const { hasInteractionWith, interact } = useInteraction(props.boardCard)
 
 // Handle dragging single cards
 const originalPosition = ref({ x: 0, y: 0 })
 const cardEl = useTemplateRef<HTMLDivElement>('card')
-const container = inject<Readonly<Ref<HTMLDivElement>>>('container')
+const { container } = storeToRefs(levelStore)
 
 const { style, position: cardPosition, isDragging } = useDraggable(cardEl, {
   initialValue: { x: props.boardCard.x, y: props.boardCard.z },
@@ -48,6 +49,7 @@ const { style, position: cardPosition, isDragging } = useDraggable(cardEl, {
 
     // Otherwise, stack the card on top of the card, that is currently active and update the position accordingly
     cardPosition.value = boardStore.stackCard(props.boardCard, card)
+    interact(card)
   },
 })
 
@@ -68,6 +70,28 @@ const classes = computed(() => {
   }
 
   return classes
+})
+
+const { play, playState, finish } = useAnimate(cardEl, [{ transform: 'scale(0)' }, { transform: 'scale(1)' }], {
+  immediate: false,
+  duration: 100,
+})
+
+onMounted(() => {
+  if (props.boardCard.isNew) {
+    play()
+    return
+  }
+
+  finish()
+})
+
+watch(playState, (state) => {
+  if (state !== 'finished') {
+    return
+  }
+
+  boardStore.markCardAsOld(props.boardCard)
 })
 </script>
 
