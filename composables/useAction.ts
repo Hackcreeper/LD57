@@ -3,6 +3,7 @@ import { spawn } from './actions/spawn'
 import { damage } from './actions/damage'
 import { hit } from './actions/hit'
 import { replace } from './actions/replace'
+import { combine } from './actions/combine'
 import type { BoardCard } from '~/types/Board'
 import type { Action } from '~/types/Action'
 
@@ -11,6 +12,7 @@ const allActions: { [key: string]: Action } = {
   damage,
   hit,
   replace,
+  combine,
 }
 
 export const useAction = () => {

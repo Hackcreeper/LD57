@@ -2,7 +2,7 @@ import type { CardsCollectionItem } from '@nuxt/content'
 import type { BoardCard } from '~/types/Board'
 import type { Action } from '~/types/Action'
 
-export const replace: Action = (action: CardsCollectionItem['interactions'][0]['actions'][0], baseCard: BoardCard, _interactingCart: BoardCard) => {
+export const replace: Action = (action: CardsCollectionItem['interactions'][0]['actions'][0], baseCard: BoardCard, _interactingCard: BoardCard) => {
   const boardStore = useBoardStore()
   const cardStore = useCardStore()
 

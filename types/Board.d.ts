@@ -6,7 +6,10 @@ export type BoardCard = {
 
   // The actual card
   card: CardsCollectionItem
+
+  // Meta information about the card
   currentHealth: number | null
+  amount: number | null
 
   // Position in world-space
   x: number
