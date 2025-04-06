@@ -35,5 +35,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <LevelBoard />
+  <div class="relative">
+    <LevelBoard />
+  </div>
 </template>

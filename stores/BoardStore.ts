@@ -2,16 +2,21 @@ import type { CardsCollectionItem } from '@nuxt/content'
 import type { BoardCard } from '~/types/Board'
 
 export const useBoardStore = defineStore('board', () => {
+  const levelStore = useLevelStore()
+  const { container } = storeToRefs(levelStore)
+
   // This is the actual board
   const board = ref<BoardCard[]>([])
   const activeCard = ref<BoardCard | undefined>()
 
   function addCard(card: CardsCollectionItem, x: number, z: number, isNew: boolean = true) {
+    const { x: cX, y: cY } = clampPosition(x, z)
+
     board.value.push({
       uniqueId: crypto.randomUUID(), // We iterate through each card, so we need something unique for Vue
       card,
-      x,
-      z,
+      x: cX,
+      z: cY,
       stackedCard: undefined,
       parentCard: undefined,
       isNew,
@@ -32,8 +37,10 @@ export const useBoardStore = defineStore('board', () => {
   }
 
   function setCardPosition(card: BoardCard, x: number, z: number) {
-    card.x = x
-    card.z = z
+    const { x: cX, y: cY } = clampPosition(x, z)
+
+    card.x = cX
+    card.z = cY
   }
 
   function stackCard(card: BoardCard, parentCard: BoardCard): { x: number, y: number } {
@@ -58,12 +65,22 @@ export const useBoardStore = defineStore('board', () => {
     card.parentCard.stackedCard = undefined
     card.parentCard = undefined
 
-    card.x = position.x
-    card.z = position.y
+    const { x: cX, y: cY } = clampPosition(position.x, position.y)
+    card.x = cX
+    card.z = cY
   }
 
   function markCardAsOld(card: BoardCard) {
     card.isNew = false
+  }
+
+  function clampPosition(x: number, y: number): { x: number, y: number } {
+    if (!container.value) return { x, y }
+
+    return {
+      x: clamp(x, 0, container.value.clientWidth - CardWidth),
+      y: clamp(y, 0, container.value.clientHeight - CardHeight),
+    }
   }
 
   return {

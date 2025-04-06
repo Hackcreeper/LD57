@@ -3,7 +3,7 @@ const cardStore = useCardStore()
 const boardStore = useBoardStore()
 const levelStore = useLevelStore()
 
-const container = templateRef<HTMLDivElement>('container')
+const container = useTemplateRef('container')
 onMounted(() => levelStore.setContainer(container.value))
 
 await cardStore.init()
@@ -14,7 +14,7 @@ const { board } = storeToRefs(boardStore)
 <template>
   <div
     ref="container"
-    class="w-full aspect-16/9 bg-pattern select-none relative"
+    class="w-full aspect-16/9 bg-pattern select-none"
   >
     <template
       v-for="card in board"
