@@ -23,7 +23,7 @@ boardStore.addCard(cardStore.getCardByIdentifier('money') ?? cardStore.getRandom
 <template>
   <div
     ref="container"
-    class="w-screen aspect-16/9 bg-pattern"
+    class="w-screen aspect-16/9 bg-pattern select-none"
   >
     <template
       v-for="card in board"

@@ -12,12 +12,11 @@ const { activeCard } = storeToRefs(boardStore) // This is the card, the user is 
 const { hasInteractionWith } = useInteraction(props.boardCard)
 
 // Handle dragging single cards
-const dragging = ref(false)
 const originalPosition = ref({ x: 0, y: 0 })
 const cardEl = useTemplateRef<HTMLDivElement>('card')
 const container = inject<Readonly<Ref<HTMLDivElement>>>('container')
 
-const { style, position: cardPosition } = useDraggable(cardEl, {
+const { style, position: cardPosition, isDragging } = useDraggable(cardEl, {
   initialValue: { x: props.boardCard.x, y: props.boardCard.z },
 
   // Make sure the card is always in the bounds of the container
@@ -25,14 +24,11 @@ const { style, position: cardPosition } = useDraggable(cardEl, {
 
   // Whenever we start a dragging operation, store the original position so that we may revert it
   onStart: () => {
-    dragging.value = true
     originalPosition.value.x = props.boardCard.x
     originalPosition.value.y = props.boardCard.z
   },
 
   onEnd: (position) => {
-    dragging.value = false
-
     // Update the position of the card, so that it correctly reflected in the data
     boardStore.setCardPosition(props.boardCard, position.x, position.y)
 
@@ -56,26 +52,22 @@ const { style, position: cardPosition } = useDraggable(cardEl, {
 })
 
 // This allow to have special vue components for cards
-const specialComponents = import.meta.glob('~/components/Object/Card/Visual/*.vue')
-const uppercasedId = computed(() => props.boardCard.card.identifier.charAt(0).toUpperCase() + props.boardCard.card.identifier.slice(1))
-const customComponentName = computed(() => {
-  const fullString = `/components/Object/Card/Visual/ObjectCardVisual${uppercasedId.value}.vue`
-  if (specialComponents[fullString]) return `ObjectCardVisual${uppercasedId.value}`
-
-  return `ObjectCardVisualDefault`
-})
+const { getVisualComponentName } = useCardVisual()
 
 // Handle active card (which card would I interact with)
 const { isOutside } = useMouseInElement(cardEl)
-const isActive = computed(() => !isOutside.value && !dragging.value)
+const isInside = computed(() => !isOutside.value)
+useActiveCard(props.boardCard, isInside, isDragging)
 
-watch(isActive, (active) => {
-  if (active) {
-    boardStore.setActiveCard(props.boardCard)
-    return
+// Calculate classes
+const classes = computed(() => {
+  let classes = `absolute ${CardClasses}`
+
+  if (isDragging.value) {
+    classes += ' z-10 scale-90 transition-transform pointer-events-none'
   }
 
-  boardStore.unsetActiveCard(props.boardCard)
+  return classes
 })
 </script>
 
@@ -83,13 +75,10 @@ watch(isActive, (active) => {
   <div
     ref="card"
     :style="style"
-    class="w-[70px] h-[100px] absolute select-none"
-    :class="{
-      'z-10 scale-90 transition-transform pointer-events-none': dragging,
-    }"
+    :class="classes"
   >
     <Component
-      :is="customComponentName"
+      :is="getVisualComponentName(boardCard.card)"
       :board-card="boardCard"
     />
   </div>

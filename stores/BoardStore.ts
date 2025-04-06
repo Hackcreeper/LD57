@@ -50,12 +50,15 @@ export const useBoardStore = defineStore('board', () => {
     }
   }
 
-  function unstackCard(card: BoardCard) {
+  function unstackCard(card: BoardCard, position: { x: number, y: number }) {
     if (!card.parentCard) return
 
     card.parentCard.stackedCards = card.parentCard.stackedCards.filter(c => c !== card)
     card.parentCard = undefined
     card.stackLevel = 0
+
+    card.x = position.x
+    card.z = position.y
   }
 
   return {

@@ -1,5 +1,10 @@
 import type { CardsCollectionItem } from '@nuxt/content'
 
+export const CardWidth = 70
+export const CardHeight = 100
+export const CardClasses = `w-[${CardWidth}px] h-[${CardHeight}px]`
+export const DeckStackPadding = 22
+
 export const useCardStore = defineStore('card', () => {
   const cards = ref<CardsCollectionItem[]>([])
 

@@ -8,6 +8,9 @@ const props = defineProps<{
   isLastCard: boolean
 }>()
 
+// Usage of stores
+const boardStore = useBoardStore()
+
 // Handle dragging card decks
 const movedOnce = ref(false)
 const cardEl = useTemplateRef<HTMLDivElement>('card')
@@ -22,12 +25,14 @@ const { style, isDragging } = useDraggable(cardEl, {
   // Make sure the card is always in the bounds of the container
   containerElement: container,
 
+  // We need to remember that we moved once to calculate the offset
+  // required by stacking
   onMove: () => {
     movedOnce.value = true
   },
 
-  onEnd: () => {
-    // movedOnce.value = false
+  onEnd: (position) => {
+    boardStore.unstackCard(props.boardCard, position)
   },
 })
 
@@ -39,13 +44,17 @@ const offset = computed(() => {
 })
 
 // This allow to have special vue components for cards
-const specialComponents = import.meta.glob('~/components/Object/Card/Visual/*.vue')
-const uppercasedId = computed(() => props.boardCard.card.identifier.charAt(0).toUpperCase() + props.boardCard.card.identifier.slice(1))
-const customComponentName = computed(() => {
-  const fullString = `/components/Object/Card/Visual/ObjectCardVisual${uppercasedId.value}.vue`
-  if (specialComponents[fullString]) return `ObjectCardVisual${uppercasedId.value}`
+const { getVisualComponentName } = useCardVisual()
 
-  return `ObjectCardVisualDefault`
+// Calculate classes
+const classes = computed(() => {
+  let classes = `absolute ${CardClasses}`
+
+  if (isDragging.value) {
+    classes += ' z-10 scale-90 pointer-events-none'
+  }
+
+  return classes
 })
 </script>
 
@@ -53,10 +62,7 @@ const customComponentName = computed(() => {
   <div
     ref="card"
     :style="style"
-    class="absolute w-[70px] h-[100px] select-none"
-    :class="{
-      'z-20 transition-transform pointer-events-none': isDragging,
-    }"
+    :class="classes"
   >
     <div
       class="w-full h-full"
@@ -64,7 +70,7 @@ const customComponentName = computed(() => {
       :style="offset"
     >
       <Component
-        :is="customComponentName"
+        :is="getVisualComponentName(boardCard.card)"
         :board-card="boardCard"
       />
     </div>
