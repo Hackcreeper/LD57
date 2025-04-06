@@ -6,28 +6,28 @@ const props = defineProps<{
 }>()
 
 const currentHealth = ref(props.boardCard.card.health)
+const text = useTemplateRef<HTMLElement>('text')
+
 const maxWidth = 70 - 16
 
-const text = ref<HTMLElement | null>(null)
-
 const styleCardHeader = computed(() => {
-  switch (props.boardCard.card.type) {
-    case 'person': return 'bg-zinc-400'
-    case 'resource': return 'bg-sky-200'
-    case 'enemy': return 'bg-red-400'
-    case 'merchant' : return 'bg-amber-300'
-    default: return 'bg-stone-200'
-  }
+  return {
+    person: 'bg-zinc-400',
+    resource: 'bg-sky-300',
+    enemy: 'bg-red-400',
+    merchant: 'bg-amber-300',
+  }[props.boardCard.card.type as string] ?? 'bg-stone-200'
 })
+
 const styleCardBody = computed(() => {
-  switch (props.boardCard.card.type) {
-    case 'person': return 'bg-zinc-200'
-    case 'resource': return 'bg-sky-100'
-    case 'enemy': return 'bg-red-300'
-    case 'merchant' : return 'bg-amber-200'
-    default: return 'bg-stone-100'
-  }
+  return {
+    person: 'bg-zinc-200',
+    resource: 'bg-sky-100',
+    enemy: 'bg-red-300',
+    merchant: 'bg-amber-200',
+  }[props.boardCard.card.type as string] ?? 'bg-stone-100'
 })
+
 onMounted(() => {
   if (!text.value) return
   const textWidth = text.value.scrollWidth
@@ -55,6 +55,7 @@ onMounted(() => {
         />
       </div>
     </slot>
+
     <div class="flex justify-center">
       <div class="flex-col">
         <slot name="icon">
