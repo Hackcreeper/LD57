@@ -41,6 +41,10 @@
             "min": 2,
             "max": 4
           }
+        },
+        {
+          "type": "damage",
+          "amount": 5
         }
       ]
     }

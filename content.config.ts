@@ -1,18 +1,18 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
-const actionsType = z.array(z.object({
-  type: z.enum(['spawn', 'damage']),
-  card: z.string().optional(),
-  amount: z.number().optional(),
-}))
-
 const amountType = z.union([
   z.number().gte(0),
   z.object({
-    min: z.number(),
-    max: z.number(),
+    min: z.number().gte(0),
+    max: z.number().gte(1),
   }),
 ])
+
+const actionsType = z.array(z.object({
+  type: z.enum(['spawn', 'damage']),
+  card: z.string().optional(),
+  amount: amountType.optional(),
+}))
 
 export default defineContentConfig({
   collections: {
@@ -29,7 +29,7 @@ export default defineContentConfig({
         interactions: z.array(z.object({
           card: z.string(),
           consume: z.boolean().default(false),
-          amount: amountType.optional(),
+          amount: z.number().gte(0).optional(),
           actions: actionsType,
           time: z.number().positive().default(0),
         })),
