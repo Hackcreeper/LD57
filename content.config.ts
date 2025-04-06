@@ -6,6 +6,14 @@ const actionsType = z.array(z.object({
   amount: z.number().optional(),
 }))
 
+const amountType = z.union([
+  z.number().gte(0),
+  z.object({
+    min: z.number(),
+    max: z.number(),
+  }),
+])
+
 export default defineContentConfig({
   collections: {
     cards: defineCollection({
@@ -21,7 +29,7 @@ export default defineContentConfig({
         interactions: z.array(z.object({
           card: z.string(),
           consume: z.boolean().default(false),
-          amount: z.number().gte(0).optional(),
+          amount: amountType.optional(),
           actions: actionsType,
           time: z.number().positive().default(0),
         })),

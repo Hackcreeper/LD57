@@ -11,7 +11,9 @@ export const spawn: Action = (action: CardsCollectionItem['interactions'][0]['ac
   const card = cardStore.getCardByIdentifier(action.card)
   assert(card !== undefined, 'Card not found!')
 
-  for (let i = 0; i < (action.amount ?? 1); i++) {
+  const amount = typeof action.amount === 'number' ? action.amount : Math.getRandomIntInclusive(action.amount?.min, action.amount?.max)
+
+  for (let i = 0; i < (amount ?? 1); i++) {
     const { x, y } = getDropCoordinates(baseCard.x, baseCard.z)
     boardStore.addCard(card, x, y)
   }

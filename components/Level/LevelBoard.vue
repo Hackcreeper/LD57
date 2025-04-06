@@ -14,7 +14,7 @@ const { board } = storeToRefs(boardStore)
 <template>
   <div
     ref="container"
-    class="w-full aspect-16/9 bg-pattern select-none"
+    class="w-full !h-[1000px] aspect-16/9 bg-pattern select-none"
   >
     <template
       v-for="card in board"
