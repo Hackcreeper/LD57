@@ -2,6 +2,7 @@
   "identifier": "soldier-instructor",
   "label": "Soldier Instr.",
   "icon": "custom:soldier-instructor",
-  "health": 30,
+  "health": 32,
+  "strength": 11,
   "type": "person"
 }

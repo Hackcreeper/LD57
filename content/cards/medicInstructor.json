@@ -3,5 +3,6 @@
   "label": "Medic Instr.",
   "icon": "custom:medic-instructor",
   "health": 15,
+  "strength": 2,
   "type": "person"
 }

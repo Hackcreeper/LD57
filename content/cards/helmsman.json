@@ -2,6 +2,7 @@
   "identifier": "helmsman",
   "label": "Helmsman",
   "icon": "custom:helmsman",
+  "strength": 4,
   "health": 20,
   "type": "person"
 }

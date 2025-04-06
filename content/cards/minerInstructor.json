@@ -3,5 +3,6 @@
   "label": "Miner Instr.",
   "icon": "custom:miner-instructor",
   "health": 22,
+  "strength": 6,
   "type": "person"
 }

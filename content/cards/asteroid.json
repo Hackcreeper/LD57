@@ -47,6 +47,24 @@
           "amount": 5
         }
       ]
+    },
+    {
+      "time": 2,
+      "card": "miner-instructor",
+      "actions": [
+        {
+          "type": "spawn",
+          "card": "metal",
+          "amount": {
+            "min": 2,
+            "max": 3
+          }
+        },
+        {
+          "type": "damage",
+          "amount": 5
+        }
+      ]
     }
   ],
 

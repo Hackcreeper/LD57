@@ -3,5 +3,6 @@
   "label": "Soldier",
   "icon": "custom:soldier",
   "health": 30,
+  "strength": 10,
   "type": "person"
 }

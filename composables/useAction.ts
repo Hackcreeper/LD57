@@ -19,6 +19,7 @@ const allActions: { [key: string]: Action } = {
 
 export const useAction = () => {
   const runActions = (actions: CardsCollectionItem['interactions'][0]['actions'], baseCard: BoardCard, interactingCart: BoardCard) => {
+    console.log('ok')
     actions.forEach((action) => {
       if (!allActions[action.type]) {
         console.error(`Action '${action.type}' not found!`)
