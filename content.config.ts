@@ -26,6 +26,7 @@ export default defineContentConfig({
           actions: actionsType,
           time: z.number().positive().default(0),
           infinite: z.boolean().default(false),
+          showHealthInsteadOfTime: z.boolean().default(false),
         })),
         onDeath: actionsType,
       }),
