@@ -4,6 +4,7 @@
   "icon": "material-symbols:man-rounded",
   "health": 20,
   "type": "person",
+  "strength": 2,
   "interactions": [
     {
       "card": "worker",

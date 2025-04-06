@@ -5,13 +5,12 @@ const { spawn } = useDemoCards()
 
 const cardStore = useCardStore()
 await cardStore.init()
-const { cards } = storeToRefs(cardStore)
 
-spawn(cards.value.map(c => c.identifier))
+spawn(['worker', 'worker', 'miner', 'miner-instructor', 'asteroid-field', 'asteroid-field'])
 </script>
 
 <template>
-  <div class="relative h-200">
-    <LevelBoard :fixed-aspect="false" />
+  <div class="relative">
+    <LevelBoard />
   </div>
 </template>

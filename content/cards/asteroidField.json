@@ -2,5 +2,29 @@
   "identifier": "asteroid-field",
   "label": "Asteroid Field",
   "icon": "mdi:focus-field",
-  "type": "building"
+  "type": "building",
+  "interactions": [
+    {
+      "card": "miner",
+      "infinite": true,
+      "time": 5,
+      "actions": [
+        {
+          "type": "spawn",
+          "card": "metal"
+        }
+      ]
+    },
+    {
+      "card": "worker",
+      "infinite": true,
+      "time": 10,
+      "actions": [
+        {
+          "type": "spawn",
+          "card": "metal"
+        }
+      ]
+    }
+  ]
 }

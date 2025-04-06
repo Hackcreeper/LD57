@@ -1,5 +1,5 @@
 {
-  "identifier": "trade-link",
+  "identifier": "trade-link-broken",
   "label": "Broken Trade Link",
   "icon": "carbon:connection-signal-off",
   "iconColor": "red",

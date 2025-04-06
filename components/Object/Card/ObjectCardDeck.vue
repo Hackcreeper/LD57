@@ -46,10 +46,16 @@ const { getVisualComponentName } = useCardVisual()
     :style="style"
   >
     <UProgress
-      v-if="boardCard.currentInteraction"
+      v-if="boardCard.currentInteraction && !boardCard.currentInteraction.showHealthInsteadOfTime"
       :model-value="boardCard.interactionProgress ?? 0"
       class="absolute -top-4"
       color="neutral"
+    />
+    <UProgress
+      v-else-if="boardCard.card.health && boardCard.currentInteraction && boardCard.currentInteraction.showHealthInsteadOfTime"
+      class="absolute -top-4"
+      :model-value="boardCard.currentHealth"
+      :max="boardCard.card.health"
     />
     <div
       :class="CardClasses"
