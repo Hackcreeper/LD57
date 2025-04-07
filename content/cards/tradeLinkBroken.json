@@ -3,5 +3,18 @@
   "label": "Broken Trade Link",
   "icon": "carbon:connection-signal-off",
   "iconColor": "red",
-  "type": "building"
+  "type": "building",
+  "interactions": [
+    {
+      "card": "metal",
+      "consume": true,
+      "amount": 5,
+      "actions": [
+        {
+          "type": "replace",
+          "card": "trade-link"
+        }
+      ]
+    }
+  ]
 }

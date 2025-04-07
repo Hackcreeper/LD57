@@ -1,0 +1,10 @@
+{
+  "identifier": "fire-extinguisher",
+  "label": "Fire Extinguisher",
+  "icon": "material-symbols:fire-extinguisher-outline",
+  "type": "tool",
+  "health": 3,
+  "buyable": true,
+  "buyableMaxAmount": 1,
+  "price": 200
+}

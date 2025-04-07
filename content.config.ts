@@ -32,6 +32,8 @@ export default defineContentConfig({
         buyable: z.boolean().default(false),
         buyableMaxAmount: z.number().gte(1).default(1),
         price: z.number().gt(0).optional(),
+        container: z.string().optional(),
+        containerMax: z.number().gt(1).optional(),
         interactions: z.array(z.object({
           card: z.string(),
           consume: z.boolean().default(false),
@@ -40,6 +42,7 @@ export default defineContentConfig({
           time: z.number().positive().default(0),
           infinite: z.boolean().default(false),
           showHealthInsteadOfTime: z.boolean().default(false),
+          consumeContainer: z.boolean().default(false),
         })),
         onDeath: actionsType,
         onSpawn: actionsType,

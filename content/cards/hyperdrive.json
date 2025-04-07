@@ -2,5 +2,29 @@
   "identifier": "hyperdrive",
   "label": "Hyperdrive",
   "icon": "game-icons:hypersonic-bolt",
-  "type": "building"
+  "type": "building",
+  "container": "fuel",
+  "containerMax": 10,
+  "interactions": [
+    {
+      "card": "fuel",
+      "time": 5,
+      "actions": [
+        {
+          "type": "fill"
+        }
+      ]
+    },
+    {
+      "card": "worker",
+      "time": 10,
+      "infinite": true,
+      "consumeContainer": true,
+      "actions": [
+        {
+          "type": "travel"
+        }
+      ]
+    }
+  ]
 }

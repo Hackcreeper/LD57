@@ -22,6 +22,7 @@ export const useInteraction = (draggingCard: BoardCard) => {
 
     const interaction = getInteraction(boardCard)
     if (!interaction) return false
+    if (interaction.consumeContainer && (boardCard.amount ?? 0) <= 0) return false
     if (!interaction.amount) return true
     if (!draggingCard.amount) return false
 
@@ -69,6 +70,11 @@ export const useInteraction = (draggingCard: BoardCard) => {
     }
 
     runActions(boardCard.currentInteraction.actions, boardCard, draggingCard)
+
+    if (boardCard.currentInteraction.consumeContainer && boardCard.amount !== null) {
+      boardCard.amount = clamp(boardCard.amount - 1, 0, boardCard.card.containerMax ?? 0)
+    }
+
     let someoneDied = false
 
     nextTick(() => {
@@ -112,7 +118,12 @@ export const useInteraction = (draggingCard: BoardCard) => {
         someoneHealed = true
       }
 
-      if (!boardCard.currentInteraction?.infinite || someoneDied || someoneHealed) {
+      if (
+        !boardCard.currentInteraction?.infinite
+        || someoneDied
+        || someoneHealed
+        || (boardCard.currentInteraction.consumeContainer && boardCard.amount === 0)
+      ) {
         const { x, y } = getDropCoordinates(boardCard.x, boardCard.z)
         boardStore.unstackCard(draggingCard, { x, y })
         return
