@@ -25,7 +25,7 @@ export const useDemoCards = () => {
         const card = cardStore.getCardByIdentifier(cardIdentifier)
         assert(card !== undefined, 'Card not found!')
 
-        boardStore.addCard(card, x, y)
+        boardStore.addCard(card, x, y, false)
         index++
       })
     })

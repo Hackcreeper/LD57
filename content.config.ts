@@ -41,6 +41,7 @@ export default defineContentConfig({
           showHealthInsteadOfTime: z.boolean().default(false),
         })),
         onDeath: actionsType,
+        onSpawn: actionsType,
       }),
     }),
   },
