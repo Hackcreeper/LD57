@@ -15,6 +15,7 @@ import { destroyRandom } from './actions/destroyRandom'
 import { random } from './actions/random'
 import type { BoardCard } from '~/types/Board'
 import type { Action } from '~/types/Action'
+import { reveal } from '~/composables/actions/reveal'
 
 const allActions: { [key: string]: Action } = {
   spawn,
@@ -31,6 +32,7 @@ const allActions: { [key: string]: Action } = {
   destroyAll,
   destroyRandom,
   random,
+  reveal,
 }
 
 export const useAction = () => {

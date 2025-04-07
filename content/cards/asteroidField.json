@@ -28,7 +28,7 @@
     }
   ],
   "timer": {
-    "time": 6,
+    "time": 60,
     "actions": [
       {
         "type": "destroy"
