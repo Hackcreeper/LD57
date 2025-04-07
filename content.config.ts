@@ -46,6 +46,10 @@ export default defineContentConfig({
         })),
         onDeath: actionsType,
         onSpawn: actionsType,
+        timer: z.object({
+          time: z.number().positive().default(0),
+          actions: actionsType,
+        }).optional(),
       }),
     }),
   },

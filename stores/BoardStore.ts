@@ -5,6 +5,7 @@ import type { BoardCard } from '~/types/Board'
 export const useBoardStore = defineStore('board', () => {
   const levelStore = useLevelStore()
   const { runActions } = useAction()
+  const { init } = useCardTimer()
   const { container } = storeToRefs(levelStore)
 
   // This is the actual board
@@ -34,6 +35,7 @@ export const useBoardStore = defineStore('board', () => {
     }
 
     if (!isNew) return
+
     runActions(newCard.card.onSpawn ?? [], newCard, newCard)
   }
 

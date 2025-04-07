@@ -33,5 +33,17 @@
       "card": "trade",
       "amount": 3
     }
-  ]
+  ],
+  "timer": {
+    "time": 60,
+    "actions": [
+      {
+        "type": "destroy"
+      },
+      {
+        "type": "destroyAll",
+        "card": "trade"
+      }
+    ]
+  }
 }
