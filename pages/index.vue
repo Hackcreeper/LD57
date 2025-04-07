@@ -30,10 +30,12 @@ watchOnce(container, () => {
   addPercentage('rocket', 50, 50)
   addPercentage('trade-link-broken', 90, 75)
 
-  addPercentage('fuel', 35, 20, 3)
-  addPercentage('money', 50, 20, 400)
+  addPercentage('fuel', 35, 25, 3)
+  addPercentage('money', 50, 25, 400)
+  addPercentage('metal', 50, 25, 5)
 
   addPercentage('flux-generator', 55, 80)
+  addPercentage('hyperdrive', 40, 1000)
 })
 </script>
 

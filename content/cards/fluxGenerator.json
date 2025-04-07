@@ -2,7 +2,7 @@
   "identifier": "flux-generator",
   "label": "Flux Generator",
   "icon": "file-icons:flux",
-  "type": "building",
+  "type": "static",
     "interactions": [
       {
         "card": "worker",

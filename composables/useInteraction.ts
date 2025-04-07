@@ -73,7 +73,7 @@ export const useInteraction = (draggingCard: BoardCard) => {
 
     runActions(boardCard.currentInteraction.actions, boardCard, draggingCard)
 
-    if (boardCard.currentInteraction.consumeContainer && boardCard.amount !== null) {
+    if (boardCard.currentInteraction?.consumeContainer && boardCard.amount !== null) {
       boardCard.amount = clamp(boardCard.amount - 1, 0, boardCard.card.containerMax ?? 0)
     }
 
@@ -123,8 +123,6 @@ export const useInteraction = (draggingCard: BoardCard) => {
       if (boardCard.card.cooldown) {
         startCooldown(boardCard)
       }
-
-      console.log(boardCard.card.cooldown)
 
       if (
         !boardCard.currentInteraction?.infinite
