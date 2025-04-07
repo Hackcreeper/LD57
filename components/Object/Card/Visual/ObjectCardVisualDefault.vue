@@ -80,8 +80,14 @@ onMounted(() => {
           />
         </slot>
         <slot name="amount">
+          <UProgress
+            v-if="boardCard.amount !== undefined && boardCard.card.container"
+            :model-value="boardCard.amount"
+            :max="boardCard.card.containerMax"
+            color="secondary"
+          />
           <div
-            v-if="boardCard.amount"
+            v-else-if="boardCard.amount"
             class="text-center block text-black -translate-y-1 text-xs"
             v-text="boardCard.amount"
           />

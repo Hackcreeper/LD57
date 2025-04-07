@@ -21,7 +21,11 @@ export const useBoardStore = defineStore('board', () => {
       z: cY,
       isNew,
       currentHealth: card.health ?? null,
-      amount: card.amount ? (amount ?? card.amount) : null,
+      amount: card.amount
+        ? (amount ?? card.amount)
+        : card.container
+          ? 0
+          : null,
     }
     board.value.push(newCard)
 
