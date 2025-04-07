@@ -10,18 +10,42 @@ const boardStore = useBoardStore()
 const levelStore = useLevelStore()
 
 const container = useTemplateRef('container')
-onMounted(() => levelStore.setContainer(container.value))
+onMounted(() => {
+  levelStore.setContainer(container.value)
+  changeBackground()
+})
 
 await cardStore.init()
 
 const { board } = storeToRefs(boardStore)
+
+const allImages = Array.from({ length: 12 }, (_, i) => `space-${i + 1}.jpg`)
+let remainingImages = [...allImages]
+const currentBackground = ref('')
+
+function getRandomImage(): string {
+  if (remainingImages.length === 0) {
+    remainingImages = [...allImages]
+  }
+
+  const index = Math.floor(Math.random() * remainingImages.length)
+  const selected = remainingImages[index]
+  remainingImages.splice(index, 1)
+  return `url('/background-images/${selected}')`
+}
+
+function changeBackground() {
+  console.log('changeBackground')
+  currentBackground.value = getRandomImage()
+}
 </script>
 
 <template>
   <div
     ref="container"
-    class="w-full  bg-pattern select-none"
+    class="w-full  bg-image select-none"
     :class="{ 'aspect-16/9': fixedAspect, 'h-full': !fixedAspect }"
+    :style="{ backgroundImage: currentBackground }"
   >
     <template
       v-for="card in board"
@@ -33,8 +57,9 @@ const { board } = storeToRefs(boardStore)
 </template>
 
 <style scoped>
-.bg-pattern {
+.bg-image {
   background-color: #000000;
-  background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%236200ff' fill-opacity='0.32'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
 }
 </style>
