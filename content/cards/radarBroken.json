@@ -3,5 +3,18 @@
   "label": "Broken Radar",
   "icon": "mingcute:radar-2-line",
   "iconColor": "red",
-  "type": "building"
+  "type": "building",
+  "interactions": [
+    {
+      "card": "metal",
+      "consume": true,
+      "amount": 5,
+      "actions": [
+        {
+          "type": "replace",
+          "card": "radar"
+        }
+      ]
+    }
+  ]
 }

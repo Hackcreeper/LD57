@@ -1,7 +1,7 @@
 {
   "identifier": "fuel",
   "label": "Fuel",
-  "icon": "material-symbols:gas-meter-outline",
+  "icon": "solar:battery-charge-minimalistic-outline",
   "type": "resource",
   "amount": 1,
   "buyable": true,
