@@ -1,0 +1,20 @@
+{
+  "identifier": "flux-generator",
+  "label": "Flux Generator",
+  "icon": "file-icons:flux",
+  "type": "static",
+    "interactions": [
+      {
+        "card": "worker",
+        "time": 40,
+        "infinite": true,
+        "actions": [
+          {
+            "type": "spawn",
+            "card": "fuel",
+            "amount": 1
+          }
+        ]
+      }
+    ]
+}

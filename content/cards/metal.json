@@ -5,7 +5,7 @@
   "type": "resource",
   "amount": 1,
   "buyable": true,
-  "buyableMaxAmount": 20,
+  "buyableMaxAmount": 10,
   "price": 10,
   "interactions": [
     {

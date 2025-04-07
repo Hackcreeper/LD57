@@ -1,7 +1,0 @@
-{
-  "identifier": "rocket-broken",
-  "label": "Broken Rocket",
-  "icon": "material-symbols:rocket-launch",
-  "iconColor": "red",
-  "type": "building"
-}

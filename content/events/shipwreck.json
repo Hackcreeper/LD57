@@ -1,0 +1,11 @@
+{
+  "identifier": "shipwreck",
+  "icon": "custom:shipwreck",
+  "type": "positive",
+  "actions": [
+    {
+      "type": "spawn",
+      "card": "shipwreck"
+    }
+  ]
+}

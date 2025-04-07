@@ -26,5 +26,13 @@
         }
       ]
     }
-  ]
+  ],
+  "timer": {
+    "time": 60,
+    "actions": [
+      {
+        "type": "destroy"
+      }
+    ]
+  }
 }
