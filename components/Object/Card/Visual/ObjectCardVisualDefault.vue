@@ -13,7 +13,7 @@ const styleCardHeader = computed(() => {
   return {
     person: 'bg-sky-400',
     resource: 'bg-zinc-500',
-    enemy: 'bg-red-500',
+    enemy: 'bg-red-400',
     merchant: 'bg-amber-400',
     building: 'bg-[#D6A77A]',
     event: 'bg-green-400',
@@ -25,7 +25,7 @@ const styleCardBody = computed(() => {
   return {
     person: 'bg-sky-200',
     resource: 'bg-zinc-300',
-    enemy: 'bg-red-300',
+    enemy: 'bg-red-200',
     merchant: 'bg-amber-200',
     building: 'bg-[#F3D9B1]',
     event: 'bg-green-200',
@@ -50,7 +50,7 @@ onMounted(() => {
   >
     <slot name="label">
       <div
-        class="flex rounded-t-md border-b-1 text-black h-8 justify-center items-center"
+        class="flex rounded-t-md border-b-1 text-black h-7 justify-center items-center"
         :class="styleCardHeader"
       >
         <h2
@@ -66,8 +66,7 @@ onMounted(() => {
       <div>
         <slot name="icon">
           <div
-            class="text-black justify-center"
-            :class="boardCard.card.health || boardCard.amount || boardCard.card.container ? '!mt-1' : '!mt-2'"
+            class="text-black justify-center !mt-2"
           >
             <Icon
               :name="boardCard.card.icon"
@@ -79,6 +78,7 @@ onMounted(() => {
         <slot name="health">
           <UProgress
             v-if="boardCard.card.health"
+            class="!mt-1"
             :model-value="boardCard.currentHealth"
             :max="boardCard.card.health"
           />
@@ -86,6 +86,7 @@ onMounted(() => {
         <slot name="amount">
           <UProgress
             v-if="boardCard.amount !== undefined && boardCard.card.container"
+            class="!mt-1"
             :model-value="boardCard.amount"
             :max="boardCard.card.containerMax"
             color="secondary"

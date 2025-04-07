@@ -15,7 +15,7 @@ const price = computed(() => {
     <template #icon>
       <div
         v-if="boardCard.buyableCard"
-        class="text-black !mt-1 flex justify-center"
+        class="text-black !mt-2 flex justify-center"
       >
         <Icon
           :name="boardCard.buyableCard.icon"
