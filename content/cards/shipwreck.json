@@ -1,6 +1,7 @@
 {
   "identifier": "shipwreck",
   "label": "Shipwreck",
+  "description": "A shipwreck. We can loot it to get resources!",
   "icon": "custom:shipwreck",
   "type": "event",
   "interactions": [

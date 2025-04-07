@@ -1,6 +1,7 @@
 {
   "identifier": "baby",
   "label": "Baby",
+  "description": "Small human. Will grow to be a large human.",
   "icon": "hugeicons:baby-02",
   "health": 2,
   "type": "person",

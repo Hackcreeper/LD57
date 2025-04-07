@@ -1,6 +1,7 @@
 {
   "identifier": "hyperdrive",
   "label": "Hyperdrive",
+  "description": "Fast-Travel in space! Moves the ship a great deal forward to reach the goal!",
   "icon": "game-icons:hypersonic-bolt",
   "type": "limitedUsage",
   "buyable": true,

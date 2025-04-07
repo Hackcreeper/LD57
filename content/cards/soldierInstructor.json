@@ -2,6 +2,7 @@
   "identifier": "soldier-instructor",
   "extend": "worker",
   "label": "Soldier Instr.",
+  "description": "Can be used to teach workers how to be soldiers",
   "icon": "custom:soldier-instructor",
   "health": 32,
   "strength": 11,

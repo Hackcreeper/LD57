@@ -1,6 +1,7 @@
 {
   "identifier": "fire-extinguisher",
   "label": "Fire Extinguisher",
+  "description": "This can safely extinguish fires. It's a bit expensive though.",
   "icon": "material-symbols:fire-extinguisher-outline",
   "type": "limitedUsage",
   "health": 3,

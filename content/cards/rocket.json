@@ -1,6 +1,7 @@
 {
   "identifier": "rocket",
   "label": "Rocket",
+  "description": "Your glourious rocket! Can be used to travel the ship forward. Requires fuel.",
   "icon": "material-symbols:rocket-launch",
   "type": "static",
   "container": "fuel",

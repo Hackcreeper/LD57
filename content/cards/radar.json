@@ -1,6 +1,7 @@
 {
   "identifier": "radar",
   "label": "Radar",
+  "description": "Reveals the next event that is on jour journey! Has a cooldown",
   "icon": "mingcute:radar-2-line",
   "type": "building",
   "buyable": true,

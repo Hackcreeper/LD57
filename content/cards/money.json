@@ -2,6 +2,7 @@
   "identifier": "money",
   "label": "Money",
   "icon": "material-symbols:money-bag-outline",
+  "description": "'I love money!!' - Mr Crabs",
   "type": "resource",
   "amount": 1,
   "interactions": [
