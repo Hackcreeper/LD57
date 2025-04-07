@@ -16,7 +16,7 @@ watchOnce(boardStore.board as never, () => {
   }
 })
 
-spawn(['worker', 'worker', 'helmsman-instructor', 'miner-instructor', 'medic-instructor', 'soldier-instructor'])
+spawn(['worker', 'worker', 'helmsman-instructor', 'miner-instructor', 'medic-instructor', 'soldier-instructor', 'brainrot'])
 </script>
 
 <template>

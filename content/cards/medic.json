@@ -22,6 +22,17 @@
           }
         }
       ]
+    },
+    {
+      "card": "brainrot",
+      "time": 2,
+      "consume": true,
+      "actions": [
+        {
+          "type": "replace",
+          "card": "worker"
+        }
+      ]
     }
   ]
 }

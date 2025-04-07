@@ -7,5 +7,18 @@
   "health": 20,
   "type": "person",
   "buyable": true,
-  "price": 500
+  "price": 500,
+  "interactions": [
+    {
+      "card": "brainrot",
+      "time": 2,
+      "consume": true,
+      "actions": [
+        {
+          "type": "replace",
+          "card": "worker"
+        }
+      ]
+    }
+  ]
 }

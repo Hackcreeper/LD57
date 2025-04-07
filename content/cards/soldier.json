@@ -7,5 +7,18 @@
   "strength": 10,
   "type": "person",
   "buyable": true,
-  "price": 600
+  "price": 600,
+  "interactions": [
+    {
+      "card": "brainrot",
+      "time": 2,
+      "consume": true,
+      "actions": [
+        {
+          "type": "replace",
+          "card": "worker"
+        }
+      ]
+    }
+  ]
 }

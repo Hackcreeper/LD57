@@ -1,0 +1,9 @@
+{
+  "identifier": "brainrot",
+  "label": "Brainrot",
+  "icon": "mdi:brain",
+  "type": "event",
+  "buyable": true,
+  "buyableMaxAmount": 3,
+  "price": 40
+}
