@@ -3,5 +3,50 @@
   "label": "Fire",
   "icon": "noto-v1:fire",
   "health": 10,
-  "type": "enemy"
+  "type": "enemy",
+  "interactions": [
+    {
+      "card": "fuel",
+      "consume": true,
+      "actions": [
+        {
+          "type": "spawn",
+          "card": "fire"
+        }
+      ]
+    },
+    {
+      "card": "fire-extinguisher",
+      "time": 2,
+      "actions": [
+        {
+          "type": "destroy"
+        },
+        {
+          "type": "hit",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "card": "worker",
+      "time": 4,
+      "actions": [
+        {
+          "type": "damage",
+          "amount": {
+            "min": 5,
+            "max": 10 
+          }
+        },
+        {
+          "type": "hit",
+          "amount": {
+            "min": 4,
+            "max": 12 
+          }
+        }
+      ]
+    }
+  ]
 }

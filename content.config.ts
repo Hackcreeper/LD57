@@ -42,6 +42,7 @@ export default defineContentConfig({
           time: z.number().positive().default(0),
           infinite: z.boolean().default(false),
           showHealthInsteadOfTime: z.boolean().default(false),
+          consumeContainer: z.boolean().default(false),
         })),
         onDeath: actionsType,
         onSpawn: actionsType,
