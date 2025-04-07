@@ -24,7 +24,8 @@
       "time": 3,
       "actions": [
         {
-          "type": "travel"
+          "type": "travel",
+          "amount": 10 
         },
         {
           "type": "destroy"
@@ -36,7 +37,8 @@
       "time": 3,
       "actions": [
         {
-          "type": "travel"
+          "type": "travel",
+          "amount": 10 
         },
         {
           "type": "destroy"

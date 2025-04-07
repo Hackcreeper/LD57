@@ -26,6 +26,26 @@
           "amount": 5
         }
       ]
+    },
+    {
+      "card": "helmsman",
+      "time": 5,
+      "actions": [
+        {
+          "type": "travel",
+          "amount": 7 
+        }
+      ]
+    },
+    {
+      "card": "helmsman-instructor",
+      "time": 5,
+      "actions": [
+        {
+          "type": "travel",
+          "amount": 7
+        }
+      ]
     }
   ]
 }
