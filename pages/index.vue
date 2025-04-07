@@ -2,10 +2,14 @@
 import { CardWidth, CardHeight } from '#imports'
 
 const cardStore = useCardStore()
+const eventStore = useEventStore()
 const boardStore = useBoardStore()
 const levelStore = useLevelStore()
+const progressStore = useProgressStore()
 
 await cardStore.init()
+await eventStore.init()
+await progressStore.init()
 
 const { container } = storeToRefs(levelStore)
 
@@ -23,19 +27,20 @@ watchOnce(container, () => {
   addPercentage('worker', 10, 25)
   addPercentage('soldier', 10, 75)
 
-  addPercentage('rocket', 90, 25)
+  addPercentage('rocket', 50, 50)
   addPercentage('trade-link-broken', 90, 75)
 
   addPercentage('fuel', 35, 15, 3)
   addPercentage('money', 50, 15, 400)
   addPercentage('metal', 65, 15, 10)
 
-  addPercentage('asteroid', 45, 50)
-  addPercentage('asteroid', 55, 50)
   addPercentage('flux-generator', 55, 80)
 })
 </script>
 
 <template>
-  <LevelBoard />
+  <main>
+    <UiJourneyBar />
+    <LevelBoard />
+  </main>
 </template>

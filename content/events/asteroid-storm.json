@@ -1,0 +1,22 @@
+{
+  "identifier": "asteroid-storm",
+  "icon": "tabler:meteor",
+  "type": "negative",
+  "actions": [
+    {
+      "type": "spawn",
+      "card": "asteroid",
+      "amount": { 
+        "min": 1,
+        "max": 2
+      }
+    },
+    {
+      "type": "spawn",
+      "card": "asteroid-field"
+    },
+    {
+      "type": "destroyRandom"
+    }
+  ]
+}

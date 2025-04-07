@@ -16,6 +16,7 @@ const styleCardHeader = computed(() => {
     enemy: 'bg-red-400',
     merchant: 'bg-amber-400',
     building: 'bg-[#D6A77A]',
+    static: 'bg-[#D6A77A]',
     event: 'bg-green-400',
     limitedUsage: 'bg-purple-400',
   }[props.boardCard.card.type as string] ?? 'bg-stone-200'
@@ -28,6 +29,7 @@ const styleCardBody = computed(() => {
     enemy: 'bg-red-200',
     merchant: 'bg-amber-200',
     building: 'bg-[#F3D9B1]',
+    static: 'bg-[#F3D9B1]',
     event: 'bg-green-200',
     limitedUsage: 'bg-purple-200',
   }[props.boardCard.card.type as string] ?? 'bg-stone-100'

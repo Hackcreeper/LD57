@@ -1,0 +1,7 @@
+{
+  "identifier": "win",
+  "icon": "material-symbols:flag",
+  "type": "positive",
+  "hidden": true,
+  "actions": []
+}

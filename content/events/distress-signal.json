@@ -1,0 +1,11 @@
+{
+  "identifier": "distress-signal",
+  "icon": "oui:security-signal-detected",
+  "type": "neutral",
+  "actions": [
+    {
+      "type": "spawn",
+      "card": "distress-signal"
+    }
+  ]
+}
