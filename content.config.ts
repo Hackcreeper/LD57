@@ -12,6 +12,11 @@ const actionsType = z.array(z.object({
   type: z.string(),
   card: z.string().optional(),
   amount: amountType.optional(),
+  actions: z.array(z.object({
+    type: z.string(),
+    card: z.string().optional(),
+    amount: amountType.optional(),
+  })).optional(),
 }))
 
 export default defineContentConfig({
