@@ -4,6 +4,7 @@ import type { BoardCard } from '~/types/Board'
 
 export const useBoardStore = defineStore('board', () => {
   const levelStore = useLevelStore()
+  const { runActions } = useAction()
   const { container } = storeToRefs(levelStore)
 
   // This is the actual board
@@ -27,6 +28,9 @@ export const useBoardStore = defineStore('board', () => {
     if (newCard.card.identifier === 'trade') {
       tradeCard(newCard)
     }
+
+    if (!isNew) return
+    runActions(newCard.card.onSpawn ?? [], newCard, newCard)
   }
 
   function removeCard(card: BoardCard) {

@@ -26,5 +26,12 @@
         }
       ]
     }
+  ],
+  "onSpawn": [
+    {
+      "type": "spawn",
+      "card": "trade",
+      "amount": 3
+    }
   ]
 }
