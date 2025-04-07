@@ -54,6 +54,3 @@ function changeBgImg() {
     </template>
   </div>
 </template>
-
-<style scoped>
-</style>
