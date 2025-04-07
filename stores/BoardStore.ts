@@ -115,6 +115,16 @@ export const useBoardStore = defineStore('board', () => {
     }
   }
 
+  function getCardByIdentifier(identifier: string): BoardCard | undefined {
+    return board.value.filter(c => c.card.identifier === identifier).at(0)
+  }
+
+  function getRandomCardByTypes(types: string[]): BoardCard | undefined {
+    const filtered = board.value.filter(c => types.includes(c.card.type))
+
+    return filtered.at(Math.floor(Math.random() * filtered.length))
+  }
+
   return {
     board: board,
     activeCard: activeCard,
@@ -128,5 +138,7 @@ export const useBoardStore = defineStore('board', () => {
     unstackCard,
     markCardAsOld,
     cancelInteraction,
+    getCardByIdentifier,
+    getRandomCardByTypes,
   }
 })

@@ -1,0 +1,11 @@
+{
+  "identifier": "travelling-merchant",
+  "icon": "material-symbols:money-bag-outline",
+  "type": "positive",
+  "actions": [
+    {
+      "type": "spawn",
+      "card": "merchant"
+    }
+  ]
+}

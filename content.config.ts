@@ -12,6 +12,11 @@ const actionsType = z.array(z.object({
   type: z.string(),
   card: z.string().optional(),
   amount: amountType.optional(),
+  actions: z.array(z.object({
+    type: z.string(),
+    card: z.string().optional(),
+    amount: amountType.optional(),
+  })).optional(),
 }))
 
 export default defineContentConfig({
@@ -27,7 +32,7 @@ export default defineContentConfig({
         iconColor: z.string().optional().default('#000000'),
         health: z.number().gte(0).lte(20).optional(),
         amount: z.number().gte(0).optional(),
-        type: z.enum(['person', 'resource', 'building', 'merchant', 'enemy', 'event', 'limitedUsage']),
+        type: z.enum(['person', 'resource', 'building', 'merchant', 'enemy', 'event', 'limitedUsage', 'static']),
         strength: z.number().gte(0).optional(),
         buyable: z.boolean().default(false),
         buyableMaxAmount: z.number().gte(1).default(1),
@@ -51,6 +56,17 @@ export default defineContentConfig({
           time: z.number().positive().default(0),
           actions: actionsType,
         }).optional(),
+      }),
+    }),
+    events: defineCollection({
+      type: 'data',
+      source: 'events/**/*.json',
+      schema: z.object({
+        identifier: z.string(),
+        icon: z.string().default('material-symbols:man-rounded'),
+        type: z.enum(['positive', 'negative', 'neutral']),
+        hidden: z.boolean().default(false),
+        actions: actionsType,
       }),
     }),
   },

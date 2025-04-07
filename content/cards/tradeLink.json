@@ -3,6 +3,7 @@
   "label": "Trade Link",
   "icon": "carbon:connection-signal",
   "type": "building",
+  "health": 1,
   "cooldown": 60,
   "interactions": [
     {
@@ -15,6 +16,12 @@
             "amount": 1
             }
         ]
+    }
+  ],
+  "onDeath": [
+    {
+      "type": "replace",
+      "card": "trade-link-broken"
     }
   ]
 }
