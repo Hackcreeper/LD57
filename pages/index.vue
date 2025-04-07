@@ -25,7 +25,7 @@ watchOnce(container, () => {
 
   addPercentage('navcom-broken', 90, 25)
   addPercentage('hyperdrive', 90, 50)
-  addPercentage('trade-link-broken', 90, 75)
+  addPercentage('trade-link', 90, 75)
 
   addPercentage('fuel', 35, 15, 6)
   addPercentage('fuel', 65, 15, 5)
