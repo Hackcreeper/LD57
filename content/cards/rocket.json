@@ -2,7 +2,7 @@
   "identifier": "rocket",
   "label": "Rocket",
   "icon": "material-symbols:rocket-launch",
-  "type": "building",
+  "type": "static",
   "container": "fuel",
   "containerMax": 10,
   "interactions": [

@@ -5,4 +5,5 @@ export type JourneyEvent = {
   event: EventsCollectionItem
   progress: number
   revealed: boolean
+  executed: boolean
 }

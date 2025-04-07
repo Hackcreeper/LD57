@@ -25,7 +25,7 @@ const { events } = storeToRefs(progressStore)
           'bg-green-300': event.event.type === 'positive',
           'bg-red-300': event.event.type === 'negative',
         }"
-        :style="`left: calc(${event.progress}% - 1.5em)`"
+        :style="`left: min(${event.progress}%, calc(100% - 1em))`"
         size="1.5em"
       />
     </div>

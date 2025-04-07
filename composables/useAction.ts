@@ -11,6 +11,7 @@ import { heal } from './actions/heal'
 import { fill } from './actions/fill'
 import { travel } from './actions/travel'
 import { destroyAll } from './actions/destroyAll'
+import { destroyRandom } from './actions/destroyRandom'
 import type { BoardCard } from '~/types/Board'
 import type { Action } from '~/types/Action'
 
@@ -27,6 +28,7 @@ const allActions: { [key: string]: Action } = {
   fill,
   travel,
   destroyAll,
+  destroyRandom,
 }
 
 export const useAction = () => {
