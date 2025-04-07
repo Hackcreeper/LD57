@@ -3,5 +3,9 @@
   "icon": "material-symbols:flag",
   "type": "positive",
   "hidden": true,
-  "actions": []
+  "actions": [
+    {
+      "type": "win"
+    }
+  ]
 }
