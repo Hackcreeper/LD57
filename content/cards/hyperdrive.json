@@ -2,27 +2,43 @@
   "identifier": "hyperdrive",
   "label": "Hyperdrive",
   "icon": "game-icons:hypersonic-bolt",
-  "type": "building",
-  "container": "fuel",
-  "containerMax": 10,
+  "type": "limitedUsage",
+  "buyable": true,
+  "price": 200,
   "interactions": [
     {
-      "card": "fuel",
+      "card": "worker",
       "time": 5,
       "actions": [
         {
-          "type": "fill"
+          "type": "travel"
+        },
+        {
+          "type": "destroy"
         }
       ]
     },
     {
-      "card": "worker",
-      "time": 10,
-      "infinite": true,
-      "consumeContainer": true,
+      "card": "helmsman",
+      "time": 3,
       "actions": [
         {
           "type": "travel"
+        },
+        {
+          "type": "destroy"
+        }
+      ]
+    },
+    {
+      "card": "helmsman-instructor",
+      "time": 3,
+      "actions": [
+        {
+          "type": "travel"
+        },
+        {
+          "type": "destroy"
         }
       ]
     }

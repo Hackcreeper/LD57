@@ -1,7 +1,0 @@
-{
-  "identifier": "navcom-broken",
-  "label": "Broken NavCom",
-  "icon": "carbon:navaid-ndb-dme",
-  "iconColor": "red",
-  "type": "building"
-}

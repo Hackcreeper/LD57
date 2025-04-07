@@ -2,7 +2,7 @@
   "identifier": "fire-extinguisher",
   "label": "Fire Extinguisher",
   "icon": "material-symbols:fire-extinguisher-outline",
-  "type": "tool",
+  "type": "limitedUsage",
   "health": 3,
   "buyable": true,
   "buyableMaxAmount": 1,

@@ -2,7 +2,7 @@
   "identifier": "brainrot",
   "label": "Brainrot",
   "icon": "mdi:brain",
-  "type": "event",
+  "type": "limitedUsage",
   "buyable": true,
   "buyableMaxAmount": 3,
   "price": 40

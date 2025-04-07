@@ -1,0 +1,30 @@
+{
+  "identifier": "rocket",
+  "label": "Rocket",
+  "icon": "material-symbols:rocket-launch",
+  "type": "building",
+  "container": "fuel",
+  "containerMax": 10,
+  "interactions": [
+    {
+      "card": "fuel",
+      "time": 5,
+      "actions": [
+        {
+          "type": "fill"
+        }
+      ]
+    },
+    {
+      "card": "worker",
+      "time": 10,
+      "infinite": true,
+      "consumeContainer": true,
+      "actions": [
+        {
+          "type": "travel"
+        }
+      ]
+    }
+  ]
+}

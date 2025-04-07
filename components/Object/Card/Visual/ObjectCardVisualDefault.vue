@@ -12,22 +12,24 @@ const maxWidth = 70 - 16
 const styleCardHeader = computed(() => {
   return {
     person: 'bg-sky-400',
-    resource: 'bg-zinc-400',
-    enemy: 'bg-red-500',
+    resource: 'bg-zinc-500',
+    enemy: 'bg-red-400',
     merchant: 'bg-amber-400',
     building: 'bg-[#D6A77A]',
     event: 'bg-green-400',
+    limitedUsage: 'bg-purple-400',
   }[props.boardCard.card.type as string] ?? 'bg-stone-200'
 })
 
 const styleCardBody = computed(() => {
   return {
     person: 'bg-sky-200',
-    resource: 'bg-zinc-200',
-    enemy: 'bg-red-300',
+    resource: 'bg-zinc-300',
+    enemy: 'bg-red-200',
     merchant: 'bg-amber-200',
     building: 'bg-[#F3D9B1]',
     event: 'bg-green-200',
+    limitedUsage: 'bg-purple-200',
   }[props.boardCard.card.type as string] ?? 'bg-stone-100'
 })
 
@@ -43,17 +45,18 @@ onMounted(() => {
 
 <template>
   <div
-    class="w-full h-full rounded-md border border-black"
+    class="w-full h-full rounded-md border border-black card-font"
     :class="styleCardBody"
   >
     <slot name="label">
       <div
-        class="flex rounded-t-md border-b-1 text-black h-6 justify-center items-center"
+        class="flex rounded-t-md border-b-1 text-black h-7 justify-center items-center"
         :class="styleCardHeader"
       >
         <h2
           ref="text"
-          class="text-nowrap"
+          class="text-center"
+          :class="boardCard.card.type === 'resource' ? 'text-white' : ''"
           v-text="boardCard.card.label"
         />
       </div>
@@ -63,7 +66,7 @@ onMounted(() => {
       <div>
         <slot name="icon">
           <div
-            class="text-black !mt-2 justify-center"
+            class="text-black justify-center !mt-2"
           >
             <Icon
               :name="boardCard.card.icon"
@@ -75,6 +78,7 @@ onMounted(() => {
         <slot name="health">
           <UProgress
             v-if="boardCard.card.health"
+            class="!mt-1"
             :model-value="boardCard.currentHealth"
             :max="boardCard.card.health"
           />
@@ -87,6 +91,7 @@ onMounted(() => {
           />
           <UProgress
             v-if="boardCard.amount !== undefined && boardCard.card.container"
+            class="!mt-1"
             :model-value="boardCard.amount"
             :max="boardCard.card.containerMax"
             color="secondary"

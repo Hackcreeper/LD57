@@ -1,0 +1,8 @@
+{
+  "identifier": "radar",
+  "label": "Radar",
+  "icon": "mingcute:radar-2-line",
+  "type": "building",
+  "buyable": true,
+  "price": 350
+}
