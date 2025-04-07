@@ -21,6 +21,7 @@ export default defineContentConfig({
       source: 'cards/**/*.json',
       schema: z.object({
         identifier: z.string(),
+        extend: z.string().optional(),
         label: z.string(),
         icon: z.string().default('material-symbols:man-rounded'),
         iconColor: z.string().optional().default('#000000'),
