@@ -20,7 +20,7 @@ function addPercentage(identifier: string, x: number, y: number, amount: number 
   const xAbsolute = (x * container.value.clientWidth / 100) - CardWidth / 2
   const yAbsolute = (y * container.value.clientHeight / 100) - CardHeight / 2
 
-  boardStore.addCard(cardStore.getCardByIdentifier(identifier) ?? cardStore.getRandomCard(), xAbsolute, yAbsolute, false, amount)
+  boardStore.addCard(cardStore.getCardByIdentifier(identifier) ?? cardStore.getRandomCard(), xAbsolute, yAbsolute, true, amount)
 }
 
 watchOnce(container, () => {
@@ -30,9 +30,9 @@ watchOnce(container, () => {
   addPercentage('rocket', 50, 50)
   addPercentage('trade-link-broken', 90, 75)
 
-  addPercentage('fuel', 35, 15, 3)
-  addPercentage('money', 50, 15, 400)
-  addPercentage('metal', 65, 15, 10)
+  addPercentage('fuel', 35, 20, 3)
+  addPercentage('money', 50, 20, 400)
+  addPercentage('asteroid-field', 65, 40)
 
   addPercentage('flux-generator', 55, 80)
 })

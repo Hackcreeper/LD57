@@ -124,6 +124,8 @@ export const useInteraction = (draggingCard: BoardCard) => {
         startCooldown(boardCard)
       }
 
+      console.log(boardCard.card.cooldown)
+
       if (
         !boardCard.currentInteraction?.infinite
         || someoneDied
