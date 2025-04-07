@@ -5,6 +5,7 @@ import type { BoardCard } from '~/types/Board'
 export const useBoardStore = defineStore('board', () => {
   const levelStore = useLevelStore()
   const { runActions } = useAction()
+  const { init } = useCardTimer()
   const { container } = storeToRefs(levelStore)
 
   // This is the actual board
@@ -27,18 +28,24 @@ export const useBoardStore = defineStore('board', () => {
           ? 0
           : null,
     }
-    board.value.push(newCard)
+    const newIndex = board.value.push(newCard)
 
     if (newCard.card.identifier === 'trade') {
       tradeCard(newCard)
     }
 
     if (!isNew) return
-    runActions(newCard.card.onSpawn ?? [], newCard, newCard)
+
+    init(board.value[newIndex - 1])
+    runActions(board.value[newIndex - 1].card.onSpawn ?? [], newCard, newCard)
   }
 
   function removeCard(card: BoardCard) {
     board.value = board.value.filter(c => c.uniqueId !== card.uniqueId)
+  }
+
+  function removeCardsByIdentifier(identifier: string) {
+    board.value = board.value.filter(c => c.card.identifier !== identifier)
   }
 
   function setActiveCard(card: BoardCard) {
@@ -113,6 +120,7 @@ export const useBoardStore = defineStore('board', () => {
     activeCard: activeCard,
     addCard,
     removeCard,
+    removeCardsByIdentifier,
     setActiveCard,
     unsetActiveCard,
     setCardPosition,

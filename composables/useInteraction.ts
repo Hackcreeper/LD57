@@ -5,6 +5,7 @@ import type { BoardCard } from '~/types/Board'
 export const useInteraction = (draggingCard: BoardCard) => {
   const boardStore = useBoardStore()
   const { runActions } = useAction()
+  const { startCooldown } = useCardCooldown()
 
   const getAvailableInteractions = (boardCard: BoardCard): string[] => {
     return (boardCard.card.interactions ?? []).map(interaction => interaction.card)
@@ -23,6 +24,7 @@ export const useInteraction = (draggingCard: BoardCard) => {
     const interaction = getInteraction(boardCard)
     if (!interaction) return false
     if (interaction.consumeContainer && (boardCard.amount ?? 0) <= 0) return false
+    if (boardCard.cooldownRemainingSeconds && boardCard.cooldownRemainingSeconds > 0) return false
     if (!interaction.amount) return true
     if (!draggingCard.amount) return false
 
@@ -118,10 +120,15 @@ export const useInteraction = (draggingCard: BoardCard) => {
         someoneHealed = true
       }
 
+      if (boardCard.card.cooldown) {
+        startCooldown(boardCard)
+      }
+
       if (
         !boardCard.currentInteraction?.infinite
         || someoneDied
         || someoneHealed
+        || boardCard.card.cooldown // If there is a cooldown, it can't be infinite
         || (boardCard.currentInteraction.consumeContainer && boardCard.amount === 0)
       ) {
         const { x, y } = getDropCoordinates(boardCard.x, boardCard.z)

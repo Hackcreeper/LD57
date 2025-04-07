@@ -3,6 +3,7 @@
   "label": "Trade Link",
   "icon": "carbon:connection-signal",
   "type": "building",
+  "cooldown": 60,
   "interactions": [
     {
       "card": "worker",
@@ -14,94 +15,6 @@
             "amount": 1
             }
         ]
-    },
-    {
-      "card": "helmsman",
-      "time": 20,
-      "actions": [
-        {
-          "type": "spawn",
-          "card": "merchant",
-          "amount": 1
-        }
-      ]
-    },
-    {
-      "card": "helmsman-instructor",
-      "time": 20,
-      "actions": [
-        {
-          "type": "spawn",
-          "card": "merchant",
-          "amount": 1
-        }
-      ]
-    },
-    {
-      "card": "medic",
-      "time": 20,
-      "actions": [
-        {
-          "type": "spawn",
-          "card": "merchant",
-          "amount": 1
-        }
-      ]
-    },
-    {
-      "card": "medic-instructor",
-      "time": 20,
-      "actions": [
-        {
-          "type": "spawn",
-          "card": "merchant",
-          "amount": 1
-        }
-      ]
-    },
-    {
-      "card": "miner",
-      "time": 20,
-      "actions": [
-        {
-          "type": "spawn",
-          "card": "merchant",
-          "amount": 1
-        }
-      ]
-    },
-    {
-      "card": "miner-instructor",
-      "time": 20,
-      "actions": [
-        {
-          "type": "spawn",
-          "card": "merchant",
-          "amount": 1
-        }
-      ]
-    },
-    {
-      "card": "soldier",
-      "time": 20,
-      "actions": [
-        {
-          "type": "spawn",
-          "card": "merchant",
-          "amount": 1
-        }
-      ]
-    },
-    {
-      "card": "soldier-instructor",
-      "time": 20,
-      "actions": [
-        {
-          "type": "spawn",
-          "card": "merchant",
-          "amount": 1
-        }
-      ]
     }
   ]
 }

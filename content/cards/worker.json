@@ -19,6 +19,17 @@
       ]
     },
     {
+      "card": "brainrot",
+      "consume": true,
+      "time": 2,
+      "actions": [
+        {
+          "type": "replace",
+          "card": "baby"
+        }
+      ]
+    },
+    {
       "card" : "medic-instructor",
       "time": 15,
       "actions": [
