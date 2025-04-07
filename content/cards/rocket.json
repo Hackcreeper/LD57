@@ -30,6 +30,8 @@
     {
       "card": "helmsman",
       "time": 5,
+      "infinite": true,
+      "consumeContainer": true,
       "actions": [
         {
           "type": "travel",
@@ -40,6 +42,8 @@
     {
       "card": "helmsman-instructor",
       "time": 5,
+      "infinite": true,
+      "consumeContainer": true,
       "actions": [
         {
           "type": "travel",

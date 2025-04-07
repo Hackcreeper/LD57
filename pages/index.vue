@@ -28,15 +28,13 @@ watchOnce(container, () => {
   addPercentage('soldier', 10, 75)
 
   addPercentage('rocket', 50, 50)
-  addPercentage('trade-link-broken', 90, 75)
+  addPercentage('trade-link', 90, 50)
 
-  addPercentage('fuel', 35, 25, 3)
+  addPercentage('fuel', 45, 25, 3)
   addPercentage('money', 50, 25, 400)
-  addPercentage('metal', 50, 25, 5)
+  addPercentage('metal', 55, 25, 5)
 
-  addPercentage('flux-generator', 55, 80)
-  addPercentage('radar', 40, 100)
-  addPercentage('radar', 40, 100)
+  addPercentage('flux-generator', 50, 80)
 })
 </script>
 
