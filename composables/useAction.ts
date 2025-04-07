@@ -7,6 +7,7 @@ import { combine } from './actions/combine'
 import { fight } from './actions/fight'
 import { trade } from './actions/trade'
 import { destroy } from './actions/destroy'
+import { heal } from './actions/heal'
 import type { BoardCard } from '~/types/Board'
 import type { Action } from '~/types/Action'
 
@@ -19,6 +20,7 @@ const allActions: { [key: string]: Action } = {
   fight,
   trade,
   destroy,
+  heal,
 }
 
 export const useAction = () => {

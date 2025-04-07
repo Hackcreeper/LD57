@@ -98,7 +98,19 @@ export const useInteraction = (draggingCard: BoardCard) => {
         }
       }
 
-      if (!boardCard.currentInteraction?.infinite || someoneDied) {
+      let someoneHealed = false
+
+      // If the card should be healed and the card is at max health, don't heal it again
+      if (
+        boardCard.currentInteraction?.actions.find(action => action.type === 'heal')
+        && boardCard.currentInteraction.infinite
+        && draggingCard.currentHealth === draggingCard.card.health
+        && boardCard.currentHealth === boardCard.card.health
+      ) {
+        someoneHealed = true
+      }
+
+      if (!boardCard.currentInteraction?.infinite || someoneDied || someoneHealed) {
         const { x, y } = getDropCoordinates(boardCard.x, boardCard.z)
         boardStore.unstackCard(draggingCard, { x, y })
         return

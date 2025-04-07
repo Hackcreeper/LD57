@@ -2,8 +2,39 @@
   "identifier": "helmsman",
   "label": "Helmsman",
   "icon": "custom:helmsman",
+  "strength": 4,
   "health": 20,
   "type": "person",
   "buyable": true,
-  "price": 500
+  "price": 500,
+  "interactions": [
+    {
+      "card" : "medic",
+      "time": 5,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 6
+          }
+        }
+      ]
+    },
+    {
+      "card" : "medic-instructor",
+      "time": 4,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 7
+          }        
+        }
+      ]
+    }
+  ]
 }

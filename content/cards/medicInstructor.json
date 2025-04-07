@@ -3,7 +3,122 @@
   "label": "Medic Instr.",
   "icon": "custom:medic-instructor",
   "health": 15,
+  "strength": 2,
   "type": "person",
   "buyable": true,
-  "price": 800
+  "price": 800,
+  "interactions": [
+    {
+      "card" : "helmsman",
+      "time": 4,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 7
+          }
+        }
+      ]
+    },
+    {
+      "card" : "helmsman-instructor",
+      "time": 4,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 7
+          }
+        }
+      ]
+    },
+    {
+      "card" : "medic",
+      "time": 4,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 7
+          }
+        }
+      ]
+    },
+    {
+      "card" : "medic-instructor",
+      "time": 4,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 7
+          }     
+        }
+      ]
+    },
+    {
+      "card" : "miner",
+      "time": 4,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 7
+          }
+        }
+      ]
+    },
+    {
+      "card" : "miner-instructor",
+      "time": 4,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 7
+          }
+        }
+      ]
+    },
+    {
+      "card" : "soldier",
+      "time": 4,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 7
+          }
+        }
+      ]
+    },
+    {
+      "card" : "soldier-instructor",
+      "time": 4,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 7
+          }
+        }
+      ]
+    }
+  ]
 }

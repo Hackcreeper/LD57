@@ -16,6 +16,94 @@
           "type": "fight"
         }
       ]
+    },
+    {
+      "card": "soldier",
+      "infinite": true,
+      "time": 3,
+      "showHealthInsteadOfTime": true,
+      "actions": [
+        {
+          "type": "fight"
+        }
+      ]
+    },
+    {
+      "card": "soldier-instructor",
+      "infinite": true,
+      "time": 3,
+      "showHealthInsteadOfTime": true,
+      "actions": [
+        {
+          "type": "fight"
+        }
+      ]
+    },
+    {
+      "card": "helmsman",
+      "infinite": true,
+      "time": 3,
+      "showHealthInsteadOfTime": true,
+      "actions": [
+        {
+          "type": "fight"
+        }
+      ]
+    },
+    {
+      "card": "helmsman-instructor",
+      "infinite": true,
+      "time": 3,
+      "showHealthInsteadOfTime": true,
+      "actions": [
+        {
+          "type": "fight"
+        }
+      ]
+    },
+    {
+      "card": "miner",
+      "infinite": true,
+      "time": 3,
+      "showHealthInsteadOfTime": true,
+      "actions": [
+        {
+          "type": "fight"
+        }
+      ]
+    },
+    {
+      "card": "miner-instructor",
+      "infinite": true,
+      "time": 3,
+      "showHealthInsteadOfTime": true,
+      "actions": [
+        {
+          "type": "fight"
+        }
+      ]
+    },
+    {
+      "card": "medic",
+      "infinite": true,
+      "time": 3,
+      "showHealthInsteadOfTime": true,
+      "actions": [
+        {
+          "type": "fight"
+        }
+      ]
+    },
+    {
+      "card": "medic-instructor",
+      "infinite": true,
+      "time": 3,
+      "showHealthInsteadOfTime": true,
+      "actions": [
+        {
+          "type": "fight"
+        }
+      ]
     }
   ]
 }

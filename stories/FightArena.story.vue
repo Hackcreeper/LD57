@@ -6,11 +6,11 @@ const { spawn } = useDemoCards()
 const cardStore = useCardStore()
 await cardStore.init()
 
-spawn(['worker', 'worker', 'baby', 'pirate', 'pirate'])
+spawn(['worker', 'soldier', 'soldier-instructor', 'medic', 'medic-instructor', 'baby', 'pirate', 'pirate'])
 </script>
 
 <template>
-  <div class="relative">
-    <LevelBoard />
+  <div class="relative h-250">
+    <LevelBoard :fixed-aspect="false" />
   </div>
 </template>

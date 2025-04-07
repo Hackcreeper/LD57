@@ -4,8 +4,7 @@
   "icon": "material-symbols:man-rounded",
   "health": 20,
   "type": "person",
-  "strength": 2,
-  "type": "person",
+  "strength": 4,
   "buyable": true,
   "price": 150,
   "interactions": [
@@ -16,6 +15,34 @@
         {
           "type": "spawn",
           "card": "baby"
+        }
+      ]
+    },
+    {
+      "card" : "medic",
+      "time": 5,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 6
+          }
+        }
+      ]
+    },
+    {
+      "card" : "medic-instructor",
+      "time": 4,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 7
+          }
         }
       ]
     }

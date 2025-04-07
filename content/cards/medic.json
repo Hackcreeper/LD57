@@ -3,7 +3,136 @@
   "label": "Medic",
   "icon": "custom:medic",
   "health": 15,
+  "strength": 2,
   "type": "person",
   "buyable": true,
-  "price": 400
+  "price": 400,
+  "interactions": [
+    {
+      "card" : "helmsman",
+      "time": 5,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 6
+          }
+        }
+      ]
+    },
+    {
+      "card" : "helmsman-instructor",
+      "time": 5,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 6
+          }
+        }
+      ]
+    },
+    {
+      "card" : "medic",
+      "time": 5,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 6
+          }
+        }
+      ]
+    },
+    {
+      "card" : "medic-instructor",
+      "time": 5,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 6
+          }        
+        }
+      ]
+    },
+    {
+      "card" : "miner",
+      "time": 5,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 6
+          }
+        }
+      ]
+    },
+    {
+      "card" : "miner-instructor",
+      "time": 5,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 6
+          }
+        }
+      ]
+    },
+    {
+      "card" : "soldier",
+      "time": 5,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 6
+          }
+        }
+      ]
+    },
+    {
+      "card" : "soldier-instructor",
+      "time": 5,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 6
+          }
+        }
+      ]
+    },
+    {
+      "card": "worker",
+      "time": 5,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 6
+          }
+        }
+      ]
+    }
+  ]
 }

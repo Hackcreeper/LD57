@@ -1,9 +1,17 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
+const amountType = z.union([
+  z.number().gte(0),
+  z.object({
+    min: z.number().gte(0),
+    max: z.number().gte(1),
+  }),
+])
+
 const actionsType = z.array(z.object({
   type: z.string(),
   card: z.string().optional(),
-  amount: z.number().optional(),
+  amount: amountType.optional(),
 }))
 
 export default defineContentConfig({

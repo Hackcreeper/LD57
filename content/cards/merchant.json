@@ -2,7 +2,6 @@
   "identifier": "merchant",
   "label": "Merchant",
   "icon": "arcticons:family-space",
-  "health": 15,
   "type": "merchant",
   "interactions": [
     {

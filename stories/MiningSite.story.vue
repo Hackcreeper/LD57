@@ -10,7 +10,7 @@ spawn(['worker', 'worker', 'miner', 'miner-instructor', 'asteroid-field', 'aster
 </script>
 
 <template>
-  <div class="relative">
-    <LevelBoard />
+  <div class="relative h-250">
+    <LevelBoard :fixed-aspect="false" />
   </div>
 </template>
