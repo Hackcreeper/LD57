@@ -108,6 +108,7 @@
   ],
   "timer": {
     "time": 12,
+    "resetWhenCardIsStacked": true,
     "actions": [
       {
         "type": "destroy"

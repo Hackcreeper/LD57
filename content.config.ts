@@ -54,6 +54,7 @@ export default defineContentConfig({
         onSpawn: actionsType,
         timer: z.object({
           time: z.number().positive().default(0),
+          resetWhenCardIsStacked: z.boolean().default(false),
           actions: actionsType,
         }).optional(),
       }),

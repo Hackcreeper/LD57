@@ -25,7 +25,15 @@ export const useCardTimer = () => {
     }, 10)
   }
 
+  const reset = (card: BoardCard) => {
+    if (card.timerTimeoutId) clearTimeout(card.timerTimeoutId)
+    if (card.timerIntervalId) clearInterval(card.timerIntervalId)
+
+    card.timerStartAt = card.timerFinishAt = card.timerProgress = card.timerTimeoutId = card.timerIntervalId = undefined
+  }
+
   return {
     init,
+    reset,
   }
 }

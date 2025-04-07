@@ -6,6 +6,7 @@ export const useInteraction = (draggingCard: BoardCard) => {
   const boardStore = useBoardStore()
   const { runActions } = useAction()
   const { startCooldown } = useCardCooldown()
+  const { reset } = useCardTimer()
 
   const getAvailableInteractions = (boardCard: BoardCard): string[] => {
     return (boardCard.card.interactions ?? []).map(interaction => interaction.card)
@@ -43,6 +44,10 @@ export const useInteraction = (draggingCard: BoardCard) => {
     }
 
     boardCard.currentInteraction = interaction
+    if (boardCard.card.timer?.resetWhenCardIsStacked) {
+      reset(boardCard)
+    }
+
     if ((interaction.time ?? 0) <= 0) {
       runInteractionActions(boardCard)
       return
