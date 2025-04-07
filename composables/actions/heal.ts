@@ -10,9 +10,9 @@ export const heal: Action = (action: CardsCollectionItem['interactions'][0]['act
 
   const amount = typeof action.amount === 'number'
     ? action.amount
-    : action.amount?.min && action.amount?.max
-      ? getRandomIntInclusive(action.amount.min, action.amount.max)
-      : 1
+    : (action.amount?.min ?? undefined) !== undefined && (action.amount?.max ?? undefined) !== undefined
+        ? getRandomIntInclusive(action.amount.min, action.amount.max)
+        : 0
 
   const activeCard: BoardCard = _baseCard.card.identifier === 'medic' || _baseCard.card.identifier === 'medic-instructor'
     ? interactingCard

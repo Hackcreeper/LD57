@@ -9,9 +9,9 @@ export const hit: Action = (action: CardsCollectionItem['interactions'][0]['acti
 
   const amount = typeof action.amount === 'number'
     ? action.amount
-    : action.amount?.min && action.amount?.max
-      ? getRandomIntInclusive(action.amount.min, action.amount.max)
-      : 0
+    : (action.amount?.min ?? undefined) !== undefined && (action.amount?.max ?? undefined) !== undefined
+        ? getRandomIntInclusive(action.amount.min, action.amount.max)
+        : 0
 
   interactingCard.currentHealth = Math.max(0, interactingCard.currentHealth - amount)
 }
