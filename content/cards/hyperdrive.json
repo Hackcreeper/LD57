@@ -2,7 +2,7 @@
   "identifier": "hyperdrive",
   "label": "Hyperdrive",
   "icon": "game-icons:hypersonic-bolt",
-  "type": "building",
+  "type": "limitedUsage",
   "buyable": true,
   "price": 200,
   "interactions": [
