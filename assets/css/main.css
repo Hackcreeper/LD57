@@ -1,2 +1,6 @@
 @import 'tailwindcss';
 @import "@nuxt/ui";
+
+.card-font {
+    font-family: "Itim", monospace;
+}

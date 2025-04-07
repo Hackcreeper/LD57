@@ -12,7 +12,7 @@ const maxWidth = 70 - 16
 const styleCardHeader = computed(() => {
   return {
     person: 'bg-sky-400',
-    resource: 'bg-zinc-400',
+    resource: 'bg-zinc-500',
     enemy: 'bg-red-500',
     merchant: 'bg-amber-400',
     building: 'bg-[#D6A77A]',
@@ -24,7 +24,7 @@ const styleCardHeader = computed(() => {
 const styleCardBody = computed(() => {
   return {
     person: 'bg-sky-200',
-    resource: 'bg-zinc-200',
+    resource: 'bg-zinc-300',
     enemy: 'bg-red-300',
     merchant: 'bg-amber-200',
     building: 'bg-[#F3D9B1]',
@@ -45,17 +45,18 @@ onMounted(() => {
 
 <template>
   <div
-    class="w-full h-full rounded-md border border-black"
+    class="w-full h-full rounded-md border border-black card-font"
     :class="styleCardBody"
   >
     <slot name="label">
       <div
-        class="flex rounded-t-md border-b-1 text-black h-6 justify-center items-center"
+        class="flex rounded-t-md border-b-1 text-black h-8 justify-center items-center"
         :class="styleCardHeader"
       >
         <h2
           ref="text"
-          class="text-nowrap"
+          class="text-center"
+          :class="boardCard.card.type === 'resource' ? 'text-white' : ''"
           v-text="boardCard.card.label"
         />
       </div>
@@ -65,7 +66,8 @@ onMounted(() => {
       <div>
         <slot name="icon">
           <div
-            class="text-black !mt-2 justify-center"
+            class="text-black justify-center"
+            :class="boardCard.card.health || boardCard.amount || boardCard.card.container ? '!mt-1' : '!mt-2'"
           >
             <Icon
               :name="boardCard.card.icon"
