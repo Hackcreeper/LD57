@@ -103,7 +103,7 @@ export const useInteraction = (draggingCard: BoardCard) => {
       // If the card should be healed and the card is at max health, don't heal it again
       if (
         boardCard.currentInteraction?.actions.find(action => action.type === 'heal')
-        && (boardCard.currentInteraction.infinite || boardCard.currentInteraction.infinite)
+        && boardCard.currentInteraction.infinite
         && draggingCard.currentHealth === draggingCard.card.health
         && boardCard.currentHealth === boardCard.card.health
       ) {
