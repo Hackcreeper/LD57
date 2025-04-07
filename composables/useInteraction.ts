@@ -11,7 +11,10 @@ export const useInteraction = (draggingCard: BoardCard) => {
   }
 
   const getInteraction = (boardCard: BoardCard): CardsCollectionItem['interactions'][0] | undefined => {
-    return boardCard.card.interactions?.find(interaction => interaction.card === draggingCard.card.identifier)
+    const ownInteraction = boardCard.card.interactions?.find(interaction => interaction.card === draggingCard.card.identifier)
+    if (ownInteraction) return ownInteraction
+
+    return boardCard.card.interactions?.find(interaction => interaction.card === draggingCard.card.extend)
   }
 
   const hasInteractionWith = (boardCard: BoardCard): boolean => {
@@ -105,7 +108,6 @@ export const useInteraction = (draggingCard: BoardCard) => {
         boardCard.currentInteraction?.actions.find(action => action.type === 'heal')
         && boardCard.currentInteraction.infinite
         && draggingCard.currentHealth === draggingCard.card.health
-        && boardCard.currentHealth === boardCard.card.health
       ) {
         someoneHealed = true
       }

@@ -1,5 +1,6 @@
 {
   "identifier": "miner",
+  "extend": "worker",
   "label": "Miner",
   "icon": "custom:miner",
   "health": 22,
@@ -9,30 +10,13 @@
   "price": 450,
   "interactions": [
     {
-      "card" : "medic",
-      "time": 5,
-      "infinite": true,
+      "card": "brainrot",
+      "time": 2,
+      "consume": true,
       "actions": [
         {
-          "type": "heal",
-          "amount":  {
-            "min": 4,
-            "max": 6
-          }
-        }
-      ]
-    },
-    {
-      "card" : "medic-instructor",
-      "time": 4,
-      "infinite": true,
-      "actions": [
-        {
-          "type": "heal",
-          "amount":  {
-            "min": 4,
-            "max": 7
-          }        
+          "type": "replace",
+          "card": "worker"
         }
       ]
     }

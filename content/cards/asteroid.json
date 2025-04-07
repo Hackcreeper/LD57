@@ -22,15 +22,6 @@
       ]
     },
     {
-      "card": "baby",
-      "actions": [
-        {
-          "type": "hit",
-          "amount": 2
-        }
-      ]
-    },
-    {
       "time": 3,
       "card": "miner",
       "actions": [
@@ -67,7 +58,6 @@
       ]
     }
   ],
-
   "onDeath": [
     {
       "type": "spawn",
