@@ -34,6 +34,7 @@ export default defineContentConfig({
         price: z.number().gt(0).optional(),
         container: z.string().optional(),
         containerMax: z.number().gt(1).optional(),
+        cooldown: z.number().gte(0).optional(),
         interactions: z.array(z.object({
           card: z.string(),
           consume: z.boolean().default(false),
@@ -46,6 +47,10 @@ export default defineContentConfig({
         })),
         onDeath: actionsType,
         onSpawn: actionsType,
+        timer: z.object({
+          time: z.number().positive().default(0),
+          actions: actionsType,
+        }).optional(),
       }),
     }),
   },

@@ -34,4 +34,16 @@ export type BoardCard = {
   buyableCard?: CardsCollectionItem
   buyableAmount?: number
   buyablePrice?: number
+
+  // Handle timer actions
+  timerTimeoutId?: ReturnType<typeof setTimeout>
+  timerIntervalId?: ReturnType<typeof setInterval>
+  timerStartAt?: number
+  timerFinishAt?: number
+  timerProgress?: number
+
+  // Handle cooldown
+  cooldownIntervalId?: ReturnType<typeof setInterval>
+  cooldownStartAt?: number
+  cooldownRemainingSeconds?: number
 }

@@ -81,6 +81,11 @@ onMounted(() => {
         </slot>
         <slot name="amount">
           <UProgress
+            v-if="boardCard.cooldownRemainingSeconds && boardCard.cooldownRemainingSeconds > 0"
+            :model-value="100 - (((boardCard.cooldownRemainingSeconds ?? 0) / (boardCard.card.cooldown ?? 1)) * 100)"
+            color="neutral"
+          />
+          <UProgress
             v-if="boardCard.amount !== undefined && boardCard.card.container"
             :model-value="boardCard.amount"
             :max="boardCard.card.containerMax"

@@ -101,6 +101,12 @@ watch(playState, (state) => {
     :style="style"
     :class="classes"
   >
+    <UProgress
+      v-if="boardCard.timerProgress !== undefined"
+      :model-value="100 - (boardCard.timerProgress ?? 0)"
+      class="absolute -top-4"
+      color="neutral"
+    />
     <Component
       :is="getVisualComponentName(boardCard.card)"
       :board-card="boardCard"
