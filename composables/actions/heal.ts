@@ -3,8 +3,6 @@ import type { BoardCard } from '~/types/Board'
 import type { Action } from '~/types/Action'
 import { getRandomIntInclusive } from '~/utils/randomIntInclusive'
 
-const boardStore = useBoardStore()
-
 export const heal: Action = (action: CardsCollectionItem['interactions'][0]['actions'][0], _baseCard: BoardCard, interactingCard: BoardCard) => {
   assert(action.amount !== undefined, 'Action `heal` requires the `amount` property to be set!')
   assert(interactingCard.currentHealth !== null, 'Action `heal` requires the interacting person to be alive!')
