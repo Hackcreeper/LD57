@@ -21,17 +21,18 @@ function addPercentage(identifier: string, x: number, y: number, amount: number 
 
 watchOnce(container, () => {
   addPercentage('worker', 10, 25)
-  addPercentage('worker', 10, 75)
+  addPercentage('soldier', 10, 75)
 
-  addPercentage('navcom-broken', 90, 25)
-  addPercentage('hyperdrive', 90, 50)
-  addPercentage('trade-link', 90, 75)
+  addPercentage('rocket', 90, 25)
+  addPercentage('trade-link-broken', 90, 75)
 
-  addPercentage('fuel', 35, 15, 6)
-  addPercentage('fuel', 65, 15, 5)
+  addPercentage('fuel', 35, 15, 3)
+  addPercentage('money', 50, 15, 400)
+  addPercentage('metal', 65, 15, 10)
 
   addPercentage('asteroid', 45, 50)
   addPercentage('asteroid', 55, 50)
+  addPercentage('flux-generator', 55, 80)
 })
 </script>
 

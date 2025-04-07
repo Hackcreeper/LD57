@@ -16,5 +16,14 @@
         }
       ]
     }
-  ]
+  ],
+  "timer": {
+    "time": 6,
+    "actions": [
+      {
+        "type": "replace",
+        "card": "worker"
+      }
+    ]
+  }
 }
