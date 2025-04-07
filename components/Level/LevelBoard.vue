@@ -42,7 +42,7 @@ function changeBgImg() {
 <template>
   <div
     ref="container"
-    class="w-full  bg-image select-none"
+    class="w-full bg-center bg-cover bg-black select-none"
     :class="{ 'aspect-16/9': fixedAspect, 'h-full': !fixedAspect }"
     :style="{ backgroundImage: currentBgImg }"
   >
@@ -56,9 +56,4 @@ function changeBgImg() {
 </template>
 
 <style scoped>
-.bg-image {
-  background-color: #000000;
-  background-size: cover;
-  background-position: center;
-}
 </style>
