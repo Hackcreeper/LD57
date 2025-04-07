@@ -12,31 +12,30 @@ const levelStore = useLevelStore()
 const container = useTemplateRef('container')
 onMounted(() => {
   levelStore.setContainer(container.value)
-  changeBackground()
+  changeBgImg()
 })
 
 await cardStore.init()
 
 const { board } = storeToRefs(boardStore)
 
-const allImages = Array.from({ length: 12 }, (_, i) => `space-${i + 1}.jpg`)
-let remainingImages = [...allImages]
-const currentBackground = ref('')
+const bgImgs = Array.from({ length: 12 }, (_, i) => `space-${i + 1}.jpg`)
+let remainingImgs = [...bgImgs]
+const currentBgImg = ref('')
 
-function getRandomImage(): string {
-  if (remainingImages.length === 0) {
-    remainingImages = [...allImages]
+function getRandomImg(): string {
+  if (remainingImgs.length === 0) {
+    remainingImgs = [...bgImgs]
   }
 
-  const index = Math.floor(Math.random() * remainingImages.length)
-  const selected = remainingImages[index]
-  remainingImages.splice(index, 1)
+  const index = Math.floor(Math.random() * remainingImgs.length)
+  const selected = remainingImgs[index]
+  remainingImgs.splice(index, 1)
   return `url('/background-images/${selected}')`
 }
 
-function changeBackground() {
-  console.log('changeBackground')
-  currentBackground.value = getRandomImage()
+function changeBgImg() {
+  currentBgImg.value = getRandomImg()
 }
 </script>
 
@@ -45,7 +44,7 @@ function changeBackground() {
     ref="container"
     class="w-full  bg-image select-none"
     :class="{ 'aspect-16/9': fixedAspect, 'h-full': !fixedAspect }"
-    :style="{ backgroundImage: currentBackground }"
+    :style="{ backgroundImage: currentBgImg }"
   >
     <template
       v-for="card in board"
