@@ -53,5 +53,16 @@ export default defineContentConfig({
         }).optional(),
       }),
     }),
+    events: defineCollection({
+      type: 'data',
+      source: 'events/**/*.json',
+      schema: z.object({
+        identifier: z.string(),
+        icon: z.string().default('material-symbols:man-rounded'),
+        type: z.enum(['positive', 'negative', 'neutral']),
+        hidden: z.boolean().default(false),
+        actions: actionsType,
+      }),
+    }),
   },
 })

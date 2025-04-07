@@ -11,7 +11,8 @@
       "time": 5,
       "actions": [
         {
-          "type": "travel"
+          "type": "travel",
+          "amount": 10 
         },
         {
           "type": "destroy"

@@ -20,7 +20,7 @@ const { board } = storeToRefs(boardStore)
 <template>
   <div
     ref="container"
-    class="w-full  bg-pattern select-none"
+    class="w-full bg-pattern select-none"
     :class="{ 'aspect-16/9': fixedAspect, 'h-full': !fixedAspect }"
   >
     <template

@@ -22,7 +22,8 @@
       "consumeContainer": true,
       "actions": [
         {
-          "type": "travel"
+          "type": "travel",
+          "amount": 5
         }
       ]
     }

@@ -1,0 +1,6 @@
+{
+  "identifier": "distress-signal",
+  "icon": "oui:security-signal-detected",
+  "type": "neutral",
+  "actions": []
+}
