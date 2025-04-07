@@ -4,5 +4,7 @@
   "icon": "custom:soldier-instructor",
   "health": 32,
   "strength": 11,
-  "type": "person"
+  "type": "person",
+  "buyable": true,
+  "price": 1200
 }

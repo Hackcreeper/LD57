@@ -4,5 +4,7 @@
   "icon": "custom:soldier",
   "health": 30,
   "strength": 10,
-  "type": "person"
+  "type": "person",
+  "buyable": true,
+  "price": 600
 }

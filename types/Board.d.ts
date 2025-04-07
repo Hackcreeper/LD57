@@ -29,4 +29,9 @@ export type BoardCard = {
   interactionFinishAt?: number
   interactionProgress?: number
   currentInteraction?: CardsCollectionItem['interactions'][0]
+
+  // Special proeprties for trading cards
+  buyableCard?: CardsCollectionItem
+  buyableAmount?: number
+  buyablePrice?: number
 }

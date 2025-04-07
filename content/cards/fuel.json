@@ -4,6 +4,9 @@
   "icon": "material-symbols:gas-meter-outline",
   "type": "resource",
   "amount": 1,
+  "buyable": true,
+  "buyableMaxAmount": 10,
+  "price": 50,
   "interactions": [
     {
       "card": "fuel",

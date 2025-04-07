@@ -5,6 +5,8 @@
   "health": 20,
   "type": "person",
   "strength": 4,
+  "buyable": true,
+  "price": 150,
   "interactions": [
     {
       "card": "worker",

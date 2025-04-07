@@ -4,5 +4,7 @@
   "icon": "custom:miner-instructor",
   "health": 22,
   "strength": 6,
-  "type": "person"
+  "type": "person",
+  "buyable": true,
+  "price": 900
 }

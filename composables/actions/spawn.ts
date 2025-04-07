@@ -18,6 +18,12 @@ export const spawn: Action = (action: CardsCollectionItem['interactions'][0]['ac
       ? getRandomIntInclusive(action.amount.min, action.amount.max)
       : 1
 
+  if (amount > 3) {
+    const { x, y } = getDropCoordinates(baseCard.x, baseCard.z)
+    boardStore.addCard(card, x, y, true, amount)
+    return
+  }
+
   for (let i = 0; i < amount; i++) {
     const { x, y } = getDropCoordinates(baseCard.x, baseCard.z)
     boardStore.addCard(card, x, y)

@@ -4,5 +4,7 @@
   "icon": "custom:helmsman",
   "strength": 4,
   "health": 20,
-  "type": "person"
+  "type": "person",
+  "buyable": true,
+  "price": 500
 }
