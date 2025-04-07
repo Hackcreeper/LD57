@@ -2,7 +2,7 @@
   "identifier": "shipwreck",
   "label": "Shipwreck",
   "icon": "custom:shipwreck",
-  "type": "limitedUsage",
+  "type": "event",
   "interactions": [
     {
       "card": "worker",
@@ -77,6 +77,9 @@
               "card": "hyperdrive"
             }
           ]
+        },
+        {
+          "type": "destroy"
         }
       ]
     }
