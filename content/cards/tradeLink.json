@@ -3,6 +3,7 @@
   "label": "Trade Link",
   "icon": "carbon:connection-signal",
   "type": "building",
+  "cooldown": 60,
   "interactions": [
     {
       "card": "worker",

@@ -41,4 +41,9 @@ export type BoardCard = {
   timerStartAt?: number
   timerFinishAt?: number
   timerProgress?: number
+
+  // Handle cooldown
+  cooldownIntervalId?: ReturnType<typeof setInterval>
+  cooldownStartAt?: number
+  cooldownRemainingSeconds?: number
 }

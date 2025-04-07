@@ -34,6 +34,7 @@ export default defineContentConfig({
         price: z.number().gt(0).optional(),
         container: z.string().optional(),
         containerMax: z.number().gt(1).optional(),
+        cooldown: z.number().gte(0).optional(),
         interactions: z.array(z.object({
           card: z.string(),
           consume: z.boolean().default(false),
