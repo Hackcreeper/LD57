@@ -6,5 +6,34 @@
   "strength": 6,
   "type": "person",
   "buyable": true,
-  "price": 900
+  "price": 900,
+  "interactions": [
+    {
+      "card" : "medic",
+      "time": 5,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 6
+          }
+        }
+      ]
+    },
+    {
+      "card" : "medic-instructor",
+      "time": 4,
+      "infinite": true,
+      "actions": [
+        {
+          "type": "heal",
+          "amount":  {
+            "min": 4,
+            "max": 7
+          }        }
+      ]
+    }
+  ]
 }

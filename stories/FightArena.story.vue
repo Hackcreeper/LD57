@@ -6,7 +6,7 @@ const { spawn } = useDemoCards()
 const cardStore = useCardStore()
 await cardStore.init()
 
-spawn(['worker', 'soldier', 'soldier-instructor', 'baby', 'pirate', 'pirate'])
+spawn(['worker', 'soldier', 'soldier-instructor', 'medic', 'medic-instructor', 'baby', 'pirate', 'pirate'])
 </script>
 
 <template>

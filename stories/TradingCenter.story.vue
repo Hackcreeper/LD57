@@ -20,7 +20,7 @@ spawn(['money', 'merchant', 'trade', 'trade', 'trade', 'trade', 'metal', 'fuel']
 </script>
 
 <template>
-  <div class="relative">
-    <LevelBoard />
+  <div class="relative h-250">
+    <LevelBoard :fixed-aspect="false" />
   </div>
 </template>
