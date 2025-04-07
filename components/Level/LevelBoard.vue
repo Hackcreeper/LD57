@@ -12,31 +12,13 @@ const levelStore = useLevelStore()
 const container = useTemplateRef('container')
 onMounted(() => {
   levelStore.setContainer(container.value)
-  changeBgImg()
+  levelStore.changeBgImg()
 })
 
 await cardStore.init()
 
 const { board } = storeToRefs(boardStore)
-
-const bgImgs = Array.from({ length: 12 }, (_, i) => `space-${i + 1}.jpg`)
-let remainingImgs = [...bgImgs]
-const currentBgImg = ref('')
-
-function getRandomImg(): string {
-  if (remainingImgs.length === 0) {
-    remainingImgs = [...bgImgs]
-  }
-
-  const index = Math.floor(Math.random() * remainingImgs.length)
-  const selected = remainingImgs[index]
-  remainingImgs.splice(index, 1)
-  return `url('/background-images/${selected}')`
-}
-
-function changeBgImg() {
-  currentBgImg.value = getRandomImg()
-}
+const { currentBgImg } = storeToRefs(levelStore)
 </script>
 
 <template>

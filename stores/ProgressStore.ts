@@ -3,6 +3,7 @@ import type { JourneyEvent } from '~/types/JourneyEvent'
 export const useProgressStore = defineStore('progress', () => {
   const eventStore = useEventStore()
   const boardStore = useBoardStore()
+  const levelStore = useLevelStore()
   const { runActions } = useAction()
 
   const amountOfEvents = 12
@@ -37,15 +38,18 @@ export const useProgressStore = defineStore('progress', () => {
     const rocket = boardStore.getCardByIdentifier('rocket')
     assert(rocket !== undefined, 'Rocket not found!')
 
-    events.value.filter(event => event.progress <= progress.value)
-      .filter(event => !event.executed)
-      .forEach((event) => {
-        event.executed = true
-        event.revealed = true
+    const filtered = events.value.filter(event => event.progress <= progress.value).filter(event => !event.executed)
+    if (filtered.length > 0) {
+      levelStore.changeBgImg()
+    }
 
-        runActions(event.event.actions, rocket, rocket)
-        // handle death
-      })
+    filtered.forEach((event) => {
+      event.executed = true
+      event.revealed = true
+
+      runActions(event.event.actions, rocket, rocket)
+      // handle death
+    })
   }
 
   return {
