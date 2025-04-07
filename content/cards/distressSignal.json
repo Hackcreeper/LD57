@@ -1,5 +1,5 @@
 {
-  "identifier": "distress-Signal",
+  "identifier": "distress-signal",
   "label": "Distress Signal",
   "icon": "oui:security-signal-detected",
   "type": "event"

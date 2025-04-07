@@ -16,7 +16,7 @@ export const useProgressStore = defineStore('progress', () => {
         uniqueId: crypto.randomUUID(), // We iterate through each card, so we need something unique for Vue
         event: eventStore.getRandomEvent(),
         progress: 100 / amountOfEvents * (i + 1),
-        revealed: true,
+        revealed: false,
         executed: false,
       })
     }

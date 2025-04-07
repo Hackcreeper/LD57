@@ -12,6 +12,10 @@
       }
     },
     {
+      "type": "spawn",
+      "card": "asteroid-field"
+    },
+    {
       "type": "destroyRandom"
     }
   ]
