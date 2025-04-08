@@ -11,7 +11,7 @@
     <UButton
       class="!mt-8 !bg-neutral-300 !py-4 !px-10 cursor-pointer !rounded-md !text-neutral-900"
       color="neutral"
-      @click="navigateTo('/', { external: true })"
+      @click="navigateTo('/LD57', { external: true })"
     >
       Retry
     </UButton>
