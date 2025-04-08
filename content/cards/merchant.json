@@ -7,23 +7,27 @@
   "interactions": [
     {
       "card": "metal",
-      "consume": true,
       "actions": [
         {
-          "type": "spawn",
+          "type": "buy",
           "card": "money",
           "amount": 6
+        },
+        {
+          "type": "destroyInteracting"
         }
       ]
     },
     {
       "card": "fuel",
-      "consume": true,
       "actions": [
         {
-          "type": "spawn",
+          "type": "buy",
           "card": "money",
           "amount": 25 
+        },
+        {
+          "type": "destroyInteracting"
         }
       ]
     }
