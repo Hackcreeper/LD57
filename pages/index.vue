@@ -29,7 +29,7 @@ const { cards } = storeToRefs(cardStore)
 
       <UButton
         class="!mt-8 !bg-primary-300 !py-4 !px-10 cursor-pointer !rounded-md !text-neutral-900"
-        @click="navigateTo('/splash', { external: true })"
+        @click="navigateTo('splash', { external: true })"
       >
         Start Game
       </UButton>
