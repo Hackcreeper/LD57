@@ -1,34 +1,6 @@
 <script setup lang="ts">
 const cardStore = useCardStore()
 await cardStore.init()
-await eventStore.init()
-await progressStore.init()
-
-const { container } = storeToRefs(levelStore)
-
-function addPercentage(identifier: string, x: number, y: number, amount: number | undefined = undefined) {
-  assert(container.value !== undefined, 'Container not found!')
-
-  // x is a percentage and I need the absolute value in regards to the container width
-  const xAbsolute = (x * container.value.clientWidth / 100) - CardWidth / 2
-  const yAbsolute = (y * container.value.clientHeight / 100) - CardHeight / 2
-
-  boardStore.addCard(cardStore.getCardByIdentifier(identifier) ?? cardStore.getRandomCard(), xAbsolute, yAbsolute, true, amount)
-}
-
-watchOnce(container, () => {
-  addPercentage('worker', 10, 25)
-  addPercentage('soldier', 10, 75)
-
-  addPercentage('rocket', 50, 50)
-  addPercentage('trade-link', 90, 75)
-
-  addPercentage('fuel', 35, 25, 3)
-  addPercentage('money', 50, 25, 400)
-  addPercentage('metal', 65, 25, 5)
-
-  addPercentage('flux-generator', 50, 80)
-})
 
 const { cards } = storeToRefs(cardStore)
 </script>
