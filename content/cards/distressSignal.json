@@ -95,7 +95,7 @@
                     "max": 3
                   }
                 }
-              ]
+              ],
               "type": "spawn",
               "card": "pirate",
               "amount": {
