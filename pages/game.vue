@@ -13,6 +13,11 @@ await progressStore.init()
 
 const { container } = storeToRefs(levelStore)
 
+const audio = new Audio('/LD57/sounds/music.mp3')
+audio.volume = 0.35
+audio.loop = true
+audio.play()
+
 function addPercentage(identifier: string, x: number, y: number, amount: number | undefined = undefined) {
   assert(container.value !== undefined, 'Container not found!')
 

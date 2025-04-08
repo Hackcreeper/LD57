@@ -13,7 +13,7 @@ export const spawn: Action = (action: CardsCollectionItem['interactions'][0]['ac
   assert(card !== undefined, 'Card not found!')
 
   if (action.sound && !action.instantSound) {
-    const audio = new Audio('/sounds/' + action.sound)
+    const audio = new Audio('/LD57/sounds/' + action.sound)
 
     if (action.soundVolume) {
       audio.volume = action.soundVolume
