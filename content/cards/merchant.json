@@ -11,7 +11,7 @@
         {
           "type": "buy",
           "card": "money",
-          "amount": 6
+          "amount": 60
         },
         {
           "type": "destroyInteracting"
@@ -24,7 +24,7 @@
         {
           "type": "buy",
           "card": "money",
-          "amount": 25 
+          "amount": 75
         },
         {
           "type": "destroyInteracting"

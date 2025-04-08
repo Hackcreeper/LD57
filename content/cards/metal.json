@@ -7,7 +7,7 @@
   "amount": 1,
   "buyable": true,
   "buyableMaxAmount": 10,
-  "price": 10,
+  "price": 65,
   "interactions": [
     {
       "card": "metal",

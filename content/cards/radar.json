@@ -5,7 +5,7 @@
   "icon": "mingcute:radar-2-line",
   "type": "building",
   "buyable": true,
-  "price": 350,
+  "price": 450,
   "cooldown": 90,
   "interactions": [
     {

@@ -31,7 +31,7 @@ watchOnce(container, () => {
   addPercentage('trade-link', 90, 50)
 
   addPercentage('fuel', 45, 25, 3)
-  addPercentage('money', 50, 25, 400)
+  addPercentage('money', 50, 25, 800)
   addPercentage('metal', 55, 25, 5)
 
   addPercentage('flux-generator', 50, 80)
