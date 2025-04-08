@@ -88,6 +88,10 @@ export const useBoardStore = defineStore('board', () => {
     card.parentCard.interactionTimeoutId = undefined
     card.parentCard.interactionFinishAt = undefined
     card.parentCard.currentInteraction = undefined
+
+    if (card.parentCard.card.timer?.resetWhenCardIsStacked) {
+      init(card.parentCard)
+    }
   }
 
   function unstackCard(card: BoardCard, position: { x: number, y: number }) {
