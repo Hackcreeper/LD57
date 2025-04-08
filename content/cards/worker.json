@@ -1,6 +1,7 @@
 {
   "identifier": "worker",
   "label": "Worker",
+  "description": "Can do nearly anything. Can be specialized using instructors",
   "icon": "material-symbols:man-rounded",
   "health": 20,
   "type": "person",

@@ -1,6 +1,7 @@
 {
   "identifier": "asteroid",
   "label": "Asteroid",
+  "description": "A small asteroid. Destroys a random card on impact and can be mined to get metal",
   "icon": "tabler:meteor",
   "health": 10,
   "type": "enemy",

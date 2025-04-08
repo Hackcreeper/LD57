@@ -1,5 +1,6 @@
 {
   "identifier": "asteroid-field",
+  "description": "Can be mined to get a bunch of metal. Disappears after some time",
   "label": "Asteroid Field",
   "icon": "mdi:focus-field",
   "type": "event",

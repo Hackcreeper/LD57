@@ -1,6 +1,7 @@
 {
   "identifier": "distress-signal",
   "label": "Distress Signal",
+  "description": "Someone needs our help! Or is it a trap?",
   "icon": "oui:security-signal-detected",
   "type": "event",
   "interactions": [

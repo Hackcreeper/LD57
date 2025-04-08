@@ -8,6 +8,7 @@ const props = defineProps<{
 // Use stores & composables
 const boardStore = useBoardStore()
 const levelStore = useLevelStore()
+const cardStore = useCardStore()
 const { activeCard } = storeToRefs(boardStore) // This is the card, the user is currently hovering above
 
 const { hasInteractionWith, interact } = useInteraction(props.boardCard)
@@ -96,20 +97,55 @@ watch(playState, (state) => {
 </script>
 
 <template>
-  <div
-    ref="card"
-    :style="style"
-    :class="classes"
+  <UPopover
+    mode="hover"
+    :open-delay="400"
+    arrow
   >
-    <UProgress
-      v-if="boardCard.timerProgress !== undefined"
-      :model-value="100 - (boardCard.timerProgress ?? 0)"
-      class="absolute -top-4"
-      color="neutral"
-    />
-    <Component
-      :is="getVisualComponentName(boardCard.card)"
-      :board-card="boardCard"
-    />
-  </div>
+    <div
+      ref="card"
+      :style="style"
+      :class="classes"
+    >
+      <UProgress
+        v-if="boardCard.timerProgress !== undefined"
+        :model-value="100 - (boardCard.timerProgress ?? 0)"
+        class="absolute -top-4"
+        color="neutral"
+      />
+      <Component
+        :is="getVisualComponentName(boardCard.card)"
+        :board-card="boardCard"
+      />
+    </div>
+
+    <template #content>
+      <div
+        class="w-[300px] !p-4"
+      >
+        <h2
+          class="!text-lg !font-bold"
+          v-text="boardCard.card.label"
+        />
+        <p v-text="boardCard.card.description" />
+
+        <template v-if="boardCard.card.interactions?.length">
+          <br><hr><br>
+
+          <p class="!text-sm">
+            Can interact with:
+          </p>
+
+          <div class="!mt-1 !text-gray-200 !space-x-2">
+            <Icon
+              v-for="interaction in boardCard.card.interactions"
+              :key="interaction.card"
+              size="2em"
+              :name="cardStore.getCardByIdentifier(interaction.card)?.icon"
+            />
+          </div>
+        </template>
+      </div>
+    </template>
+  </UPopover>
 </template>

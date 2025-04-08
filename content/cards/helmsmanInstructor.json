@@ -2,6 +2,7 @@
   "identifier": "helmsman-instructor",
   "extend": "worker",
   "label": "Helmsman Instr.",
+  "description": "Can be used to teach workers how to be helmsmans",
   "icon": "custom:helmsman-instructor",
   "strength": 4,
   "health": 20,

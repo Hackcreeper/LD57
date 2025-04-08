@@ -1,6 +1,7 @@
 {
   "identifier": "merchant",
   "label": "Merchant",
+  "description": "Brings a lot of goods. Disappers after a while. Drop stuff at him to get money!",
   "icon": "arcticons:family-space",
   "type": "merchant",
   "interactions": [

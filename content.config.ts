@@ -28,6 +28,7 @@ export default defineContentConfig({
         identifier: z.string(),
         extend: z.string().optional(),
         label: z.string(),
+        description: z.string(),
         icon: z.string().default('material-symbols:man-rounded'),
         iconColor: z.string().optional().default('#000000'),
         health: z.number().gte(0).lte(20).optional(),

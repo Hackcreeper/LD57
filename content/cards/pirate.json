@@ -1,6 +1,7 @@
 {
   "identifier": "pirate",
   "label": "Space-Pirate",
+  "description": "Can be attacked! If ignored for too long, will run away and destroying a random card on its way!",
   "icon": "game-icons:pirate-skull",
   "health": 25,
   "type": "enemy",
@@ -20,7 +21,7 @@
     {
       "card": "soldier",
       "infinite": true,
-      "time": 3,
+      "time": 2,
       "showHealthInsteadOfTime": true,
       "actions": [
         {
@@ -31,73 +32,7 @@
     {
       "card": "soldier-instructor",
       "infinite": true,
-      "time": 3,
-      "showHealthInsteadOfTime": true,
-      "actions": [
-        {
-          "type": "fight"
-        }
-      ]
-    },
-    {
-      "card": "helmsman",
-      "infinite": true,
-      "time": 3,
-      "showHealthInsteadOfTime": true,
-      "actions": [
-        {
-          "type": "fight"
-        }
-      ]
-    },
-    {
-      "card": "helmsman-instructor",
-      "infinite": true,
-      "time": 3,
-      "showHealthInsteadOfTime": true,
-      "actions": [
-        {
-          "type": "fight"
-        }
-      ]
-    },
-    {
-      "card": "miner",
-      "infinite": true,
-      "time": 3,
-      "showHealthInsteadOfTime": true,
-      "actions": [
-        {
-          "type": "fight"
-        }
-      ]
-    },
-    {
-      "card": "miner-instructor",
-      "infinite": true,
-      "time": 3,
-      "showHealthInsteadOfTime": true,
-      "actions": [
-        {
-          "type": "fight"
-        }
-      ]
-    },
-    {
-      "card": "medic",
-      "infinite": true,
-      "time": 3,
-      "showHealthInsteadOfTime": true,
-      "actions": [
-        {
-          "type": "fight"
-        }
-      ]
-    },
-    {
-      "card": "medic-instructor",
-      "infinite": true,
-      "time": 3,
+      "time": 2,
       "showHealthInsteadOfTime": true,
       "actions": [
         {

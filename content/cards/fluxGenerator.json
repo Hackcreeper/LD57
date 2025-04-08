@@ -1,6 +1,7 @@
 {
   "identifier": "flux-generator",
   "label": "Flux Generator",
+  "description": "An endless, if slow, source of fuel. Can be used to power the ship.",
   "icon": "file-icons:flux",
   "type": "static",
     "interactions": [

@@ -1,6 +1,7 @@
 {
   "identifier": "trade-link",
   "label": "Trade Link",
+  "description": "Calls a merchant to trade with. Has a cooldown",
   "icon": "carbon:connection-signal",
   "type": "building",
   "health": 1,

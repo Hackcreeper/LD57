@@ -2,6 +2,7 @@
   "identifier": "medic-instructor",
   "extend": "worker",
   "label": "Medic Instr.",
+  "description": "Can be used to teach workers how to be medics",
   "icon": "custom:medic-instructor",
   "health": 15,
   "strength": 2,

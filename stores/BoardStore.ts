@@ -21,6 +21,7 @@ export const useBoardStore = defineStore('board', () => {
       x: cX,
       z: cY,
       isNew,
+      isDead: false,
       currentHealth: card.health ?? null,
       amount: card.amount
         ? (amount ?? card.amount)

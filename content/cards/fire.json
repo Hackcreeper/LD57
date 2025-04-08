@@ -1,6 +1,7 @@
 {
   "identifier": "fire",
   "label": "Fire",
+  "description": "It's a fire! Don't throw fuel at it!",
   "icon": "noto-v1:fire",
   "health": 10,
   "type": "enemy",

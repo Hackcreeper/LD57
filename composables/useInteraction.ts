@@ -78,7 +78,7 @@ export const useInteraction = (draggingCard: BoardCard) => {
 
     runActions(boardCard.currentInteraction.actions, boardCard, draggingCard)
 
-    if (boardCard.currentInteraction.consumeContainer && boardCard.amount !== null) {
+    if (boardCard.currentInteraction?.consumeContainer && boardCard.amount !== null) {
       boardCard.amount = clamp(boardCard.amount - 1, 0, boardCard.card.containerMax ?? 0)
     }
 
@@ -89,6 +89,8 @@ export const useInteraction = (draggingCard: BoardCard) => {
       if (boardCard.currentHealth !== null && boardCard.currentHealth <= 0) {
         runActions(boardCard.card.onDeath ?? [], boardCard, draggingCard)
         boardStore.removeCard(boardCard)
+        boardCard.isDead = true
+        reset(boardCard)
         someoneDied = true
       }
 
@@ -96,6 +98,8 @@ export const useInteraction = (draggingCard: BoardCard) => {
       if (draggingCard.currentHealth !== null && draggingCard.currentHealth <= 0) {
         runActions(draggingCard.card.onDeath ?? [], boardCard, draggingCard)
         boardStore.removeCard(draggingCard)
+        draggingCard.isDead = true
+        reset(draggingCard)
         someoneDied = true
       }
 

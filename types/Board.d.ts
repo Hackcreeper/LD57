@@ -21,6 +21,7 @@ export type BoardCard = {
 
   // Mark this card as a new card
   isNew: boolean
+  isDead: boolean
 
   // Handle timed interactions
   interactionTimeoutId?: ReturnType<typeof setTimeout>
