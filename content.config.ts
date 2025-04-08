@@ -12,6 +12,9 @@ const actionsType = z.array(z.object({
   type: z.string(),
   card: z.string().optional(),
   amount: amountType.optional(),
+  sound: z.string().optional(),
+  instantSound: z.boolean().optional(),
+  soundVolume: z.number().gte(0).lte(1).optional(),
   actions: z.array(z.object({
     type: z.string(),
     card: z.string().optional(),

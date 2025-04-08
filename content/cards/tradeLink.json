@@ -14,7 +14,9 @@
             {
             "type": "spawn",
             "card": "merchant",
-            "amount": 1
+            "amount": 1,
+            "sound": "merchant-call.mp3",
+            "instantSound": true
             }
         ]
     }
