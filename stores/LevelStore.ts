@@ -19,7 +19,7 @@ export const useLevelStore = defineStore('level', () => {
     const index = Math.floor(Math.random() * remainingImgs.length)
     const selected = remainingImgs[index]
     remainingImgs.splice(index, 1)
-    return `url('/background-images/${selected}')`
+    return `url('/LD57/background-images/${selected}')`
   }
 
   const changeBgImg = () => {
