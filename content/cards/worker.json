@@ -16,7 +16,8 @@
         {
           "type": "spawn",
           "card": "baby",
-          "sound": "baby.mp3"
+          "sound": "baby.mp3",
+          "soundVolume": 0.25
         }
       ]
     },
@@ -27,7 +28,9 @@
       "actions": [
         {
           "type": "replace",
-          "card": "baby"
+          "card": "baby",
+          "sound": "baby.mp3",
+          "soundVolume": 0.25
         }
       ]
     },
