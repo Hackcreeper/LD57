@@ -28,7 +28,7 @@
       "actions": [
         {
           "type": "travel",
-          "sound": "hyperdrive.mp3"
+          "sound": "hyperdrive.mp3",
           "amount": 10 
         },
         {
@@ -42,7 +42,7 @@
       "actions": [
         {
           "type": "travel",
-          "sound": "hyperdrive.mp3"
+          "sound": "hyperdrive.mp3",
           "amount": 10 
         },
         {
