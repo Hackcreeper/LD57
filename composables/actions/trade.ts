@@ -2,11 +2,16 @@ import type { CardsCollectionItem } from '@nuxt/content'
 import type { BoardCard } from '~/types/Board'
 import type { Action } from '~/types/Action'
 
-export const trade: Action = (_action: CardsCollectionItem['interactions'][0]['actions'][0], baseCard: BoardCard, _interactingCard: BoardCard) => {
+export const trade: Action = (action: CardsCollectionItem['interactions'][0]['actions'][0], baseCard: BoardCard, _interactingCard: BoardCard) => {
   const boardStore = useBoardStore()
 
   assert(baseCard.buyableCard !== undefined, 'Action `trade` requires the base card to have a buyable card!')
   assert(baseCard.buyableAmount !== undefined, 'Action `trade` requires the base card to have a buyable amount!')
+
+  if (action.sound && !action.instantSound) {
+    const audio = new Audio('/sounds/' + action.sound)
+    audio.play()
+  }
 
   if (baseCard.buyableAmount > 3) {
     const { x, y } = getDropCoordinates(baseCard.x, baseCard.z)

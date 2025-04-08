@@ -48,6 +48,15 @@ export const useInteraction = (draggingCard: BoardCard) => {
       return
     }
 
+    const action = boardCard.currentInteraction.actions.find(
+      action => !!action.sound && action.instantSound,
+    )
+
+    if (action) {
+      const audio = new Audio('/sounds/' + action.sound)
+      audio.play()
+    }
+
     boardCard.interactionStartAt = Date.now()
     boardCard.interactionFinishAt = (new Date(Date.now() + (interaction.time ?? 0) * 1000)).getTime()
     boardCard.interactionProgress = 0

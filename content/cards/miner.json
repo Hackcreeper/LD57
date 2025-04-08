@@ -16,7 +16,8 @@
       "actions": [
         {
           "type": "replace",
-          "card": "worker"
+          "card": "worker",
+          "sound": "brainrot.mp3"
         }
       ]
     }

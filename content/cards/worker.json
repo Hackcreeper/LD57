@@ -14,7 +14,8 @@
       "actions": [
         {
           "type": "spawn",
-          "card": "baby"
+          "card": "baby",
+          "sound": "baby.mp3"
         }
       ]
     },

@@ -10,7 +10,8 @@
       "amount": 1,
       "actions": [
         {
-          "type": "trade"
+          "type": "trade",
+          "sound": "trade.mp3"
         },
         {
           "type": "destroy"

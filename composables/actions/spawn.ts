@@ -12,6 +12,16 @@ export const spawn: Action = (action: CardsCollectionItem['interactions'][0]['ac
   const card = cardStore.getCardByIdentifier(action.card)
   assert(card !== undefined, 'Card not found!')
 
+  if (action.sound && !action.instantSound) {
+    const audio = new Audio('/sounds/' + action.sound)
+
+    if (action.soundVolume) {
+      audio.volume = action.soundVolume
+    }
+
+    audio.play()
+  }
+
   const amount = typeof action.amount === 'number'
     ? action.amount
     : action.amount?.min && action.amount?.max

@@ -33,12 +33,68 @@
               ]
             },
             {
-              "type": "spawn",
-              "card": "pirate",
-              "amount": {
-                "min": 1,
-                "max": 3
-              }
+              "type": "random",
+              "actions": [
+                {
+                  "type": "spawn",
+                  "card": "pirate",
+                  "sound": "pirate-1.mp3",
+                  "soundVolume": 0.5,
+                  "amount": {
+                    "min": 1,
+                    "max": 3
+                  }
+                },
+                {
+                  "type": "spawn",
+                  "card": "pirate",
+                  "sound": "pirate-1.mp3",
+                  "soundVolume": 0.5,
+                  "amount": {
+                    "min": 1,
+                    "max": 3
+                  }
+                },
+                {
+                  "type": "spawn",
+                  "card": "pirate",
+                  "sound": "pirate-2.mp3",
+                  "soundVolume": 0.5,
+                  "amount": {
+                    "min": 1,
+                    "max": 3
+                  }
+                },
+                {
+                  "type": "spawn",
+                  "card": "pirate",
+                  "sound": "pirate-2.mp3",
+                  "soundVolume": 0.5,
+                  "amount": {
+                    "min": 1,
+                    "max": 3
+                  }
+                },
+                {
+                  "type": "spawn",
+                  "card": "pirate",
+                  "sound": "pirate-2.mp3",
+                  "soundVolume": 0.5,
+                  "amount": {
+                    "min": 1,
+                    "max": 3
+                  }
+                },
+                {
+                  "type": "spawn",
+                  "card": "pirate",
+                  "sound": "pirate-3.mp3",
+                  "amount": {
+                    "min": 1,
+                    "max": 3
+                  }
+                }
+              ]
             },
             {
               "type": "random",

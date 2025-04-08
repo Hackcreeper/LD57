@@ -11,6 +11,13 @@ export const replace: Action = (action: CardsCollectionItem['interactions'][0]['
   const card = cardStore.getCardByIdentifier(action.card)
   assert(card !== undefined, 'Card not found!')
 
+  console.log(action)
+
+  if (action.sound) {
+    const audio = new Audio('/sounds/' + action.sound)
+    audio.play()
+  }
+
   boardStore.removeCard(baseCard)
   boardStore.addCard(card, baseCard.x, baseCard.z)
 }

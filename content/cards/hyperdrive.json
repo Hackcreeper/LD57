@@ -12,7 +12,9 @@
       "actions": [
         {
           "type": "travel",
-          "amount": 10 
+          "amount": 10,
+          "sound": "hyperdrive.mp3",
+          "instantSound": true
         },
         {
           "type": "destroy"
@@ -24,7 +26,8 @@
       "time": 3,
       "actions": [
         {
-          "type": "travel"
+          "type": "travel",
+          "sound": "hyperdrive.mp3"
         },
         {
           "type": "destroy"
@@ -36,7 +39,8 @@
       "time": 3,
       "actions": [
         {
-          "type": "travel"
+          "type": "travel",
+          "sound": "hyperdrive.mp3"
         },
         {
           "type": "destroy"
