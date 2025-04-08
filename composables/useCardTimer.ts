@@ -12,6 +12,7 @@ export const useCardTimer = () => {
 
     card.timerTimeoutId = setTimeout(() => {
       assert(card.card.timer?.actions !== undefined, `Card '${card.card.label}' with timer needs actions`)
+      if (card.isDead) return
 
       runActions(card.card.timer.actions, card, card)
     }, (card.card.timer.time ?? 0) * 1000)

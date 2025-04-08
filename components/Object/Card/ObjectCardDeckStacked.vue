@@ -9,6 +9,7 @@ const props = defineProps<{
 // Usage of stores
 const boardStore = useBoardStore()
 const levelStore = useLevelStore()
+const cardStore = useCardStore()
 
 // Handle dragging card decks
 const movedOnce = ref(false)
@@ -60,20 +61,55 @@ const classes = computed(() => {
 </script>
 
 <template>
-  <div
-    ref="card"
-    :style="style"
-    :class="classes"
+  <UPopover
+    mode="hover"
+    :open-delay="400"
+    arrow
   >
     <div
-      class="w-full h-full"
-      :class="{ 'absolute': movedOnce, 'scale-90': isDragging }"
-      :style="offset"
+      ref="card"
+      :style="style"
+      :class="classes"
     >
-      <Component
-        :is="getVisualComponentName(boardCard.card)"
-        :board-card="boardCard"
-      />
+      <div
+        class="w-full h-full"
+        :class="{ 'absolute': movedOnce, 'scale-90': isDragging }"
+        :style="offset"
+      >
+        <Component
+          :is="getVisualComponentName(boardCard.card)"
+          :board-card="boardCard"
+        />
+      </div>
     </div>
-  </div>
+
+    <template #content>
+      <div
+        class="w-[300px] !p-4"
+      >
+        <h2
+          class="!text-lg !font-bold"
+          v-text="boardCard.card.label"
+        />
+        <p v-text="boardCard.card.description" />
+
+        <template v-if="boardCard.card.interactions?.length">
+          <br><hr><br>
+
+          <p class="!text-sm">
+            Can interact with:
+          </p>
+
+          <div class="!mt-1 !text-gray-200 !space-x-2">
+            <Icon
+              v-for="interaction in boardCard.card.interactions"
+              :key="interaction.card"
+              size="2em"
+              :name="cardStore.getCardByIdentifier(interaction.card)?.icon"
+            />
+          </div>
+        </template>
+      </div>
+    </template>
+  </UPopover>
 </template>
