@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     global: true,
   }],
   devtools: { enabled: true },
+  app: { baseURL: '/LD57' },
   css: ['~/assets/css/main.css'],
   compatibilityDate: '2025-04-06',
   nitro: {

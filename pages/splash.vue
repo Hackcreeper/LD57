@@ -10,7 +10,7 @@ watch(playState, (state) => {
     return
   }
 
-  navigateTo('/game', { external: true })
+  navigateTo('/LD57/game', { external: true })
 })
 </script>
 
