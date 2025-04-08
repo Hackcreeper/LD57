@@ -6,6 +6,7 @@ export const useInteraction = (draggingCard: BoardCard) => {
   const boardStore = useBoardStore()
   const { runActions } = useAction()
   const { startCooldown } = useCardCooldown()
+  const { reset } = useCardTimer()
 
   const getAvailableInteractions = (boardCard: BoardCard): string[] => {
     return (boardCard.card.interactions ?? []).map(interaction => interaction.card)
@@ -43,6 +44,10 @@ export const useInteraction = (draggingCard: BoardCard) => {
     }
 
     boardCard.currentInteraction = interaction
+    if (boardCard.card.timer?.resetWhenCardIsStacked) {
+      reset(boardCard)
+    }
+
     if ((interaction.time ?? 0) <= 0) {
       runInteractionActions(boardCard)
       return
@@ -93,6 +98,8 @@ export const useInteraction = (draggingCard: BoardCard) => {
       if (boardCard.currentHealth !== null && boardCard.currentHealth <= 0) {
         runActions(boardCard.card.onDeath ?? [], boardCard, draggingCard)
         boardStore.removeCard(boardCard)
+        boardCard.isDead = true
+        reset(boardCard)
         someoneDied = true
       }
 
@@ -100,6 +107,8 @@ export const useInteraction = (draggingCard: BoardCard) => {
       if (draggingCard.currentHealth !== null && draggingCard.currentHealth <= 0) {
         runActions(draggingCard.card.onDeath ?? [], boardCard, draggingCard)
         boardStore.removeCard(draggingCard)
+        draggingCard.isDead = true
+        reset(draggingCard)
         someoneDied = true
       }
 

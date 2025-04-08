@@ -31,6 +31,7 @@ export default defineContentConfig({
         identifier: z.string(),
         extend: z.string().optional(),
         label: z.string(),
+        description: z.string(),
         icon: z.string().default('material-symbols:man-rounded'),
         iconColor: z.string().optional().default('#000000'),
         health: z.number().gte(0).lte(20).optional(),
@@ -57,6 +58,7 @@ export default defineContentConfig({
         onSpawn: actionsType,
         timer: z.object({
           time: z.number().positive().default(0),
+          resetWhenCardIsStacked: z.boolean().default(false),
           actions: actionsType,
         }).optional(),
       }),

@@ -1,6 +1,7 @@
 {
   "identifier": "hyperdrive",
   "label": "Hyperdrive",
+  "description": "Fast-Travel in space! Moves the ship a great deal forward to reach the goal!",
   "icon": "game-icons:hypersonic-bolt",
   "type": "limitedUsage",
   "buyable": true,
@@ -28,6 +29,7 @@
         {
           "type": "travel",
           "sound": "hyperdrive.mp3"
+          "amount": 10 
         },
         {
           "type": "destroy"
@@ -41,6 +43,7 @@
         {
           "type": "travel",
           "sound": "hyperdrive.mp3"
+          "amount": 10 
         },
         {
           "type": "destroy"

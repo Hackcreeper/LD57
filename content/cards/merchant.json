@@ -1,28 +1,33 @@
 {
   "identifier": "merchant",
   "label": "Merchant",
+  "description": "Brings a lot of goods. Disappers after a while. Drop stuff at him to get money!",
   "icon": "arcticons:family-space",
   "type": "merchant",
   "interactions": [
     {
       "card": "metal",
-      "consume": true,
       "actions": [
         {
-          "type": "spawn",
+          "type": "buy",
           "card": "money",
           "amount": 6
+        },
+        {
+          "type": "destroyInteracting"
         }
       ]
     },
     {
       "card": "fuel",
-      "consume": true,
       "actions": [
         {
-          "type": "spawn",
+          "type": "buy",
           "card": "money",
           "amount": 25 
+        },
+        {
+          "type": "destroyInteracting"
         }
       ]
     }

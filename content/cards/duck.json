@@ -1,6 +1,7 @@
 {
   "identifier": "duck",
   "label": "Duck",
+  "description": "Quack.",
   "icon": "icon-park-outline:duck",
   "type": "person",
   "buyable": true,

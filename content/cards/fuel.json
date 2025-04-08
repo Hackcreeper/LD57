@@ -1,6 +1,7 @@
 {
   "identifier": "fuel",
   "label": "Fuel",
+  "description": "Can be used to power the rocket. Can be stacked and sold for money!",
   "icon": "solar:battery-charge-minimalistic-outline",
   "type": "resource",
   "amount": 1,

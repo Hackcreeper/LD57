@@ -2,6 +2,7 @@
   "identifier": "trade",
   "label": "Trade",
   "icon": "material-symbols:storefront-outline",
+  "description": "Trades money for goods. Will disappear when the merchant goes away",
   "type": "merchant",
   "interactions": [
     {

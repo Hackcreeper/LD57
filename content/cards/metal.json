@@ -1,6 +1,7 @@
 {
   "identifier": "metal",
   "label": "Metal",
+  "description": "Requires to repair broken parts. Can be stacked and sold for money!",
   "icon": "icon-park-outline:heavy-metal",
   "type": "resource",
   "amount": 1,

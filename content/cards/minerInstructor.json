@@ -2,6 +2,7 @@
   "identifier": "miner-instructor",
   "extend": "worker",
   "label": "Miner Instr.",
+  "description": "Can be used to teach workers how to be miners",
   "icon": "custom:miner-instructor",
   "health": 22,
   "strength": 6,

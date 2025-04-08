@@ -2,6 +2,7 @@
   "identifier": "soldier",
   "extend": "worker",
   "label": "Soldier",
+  "description": "A specialized worker. Is more efficent when fighting than a worker.",
   "icon": "custom:soldier",
   "health": 30,
   "strength": 10,

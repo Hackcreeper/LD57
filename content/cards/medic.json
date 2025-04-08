@@ -1,6 +1,7 @@
 {
   "identifier": "medic",
   "extend": "worker",
+  "description": "A specialized worker. Can be used to heal other workers.",
   "label": "Medic",
   "icon": "custom:medic",
   "health": 15,

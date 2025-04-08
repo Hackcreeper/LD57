@@ -2,6 +2,7 @@
   "identifier": "miner",
   "extend": "worker",
   "label": "Miner",
+  "description": "A specialized worker. Is more efficent when mining than a worker.",
   "icon": "custom:miner",
   "health": 22,
   "strength": 6,

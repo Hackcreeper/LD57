@@ -2,6 +2,7 @@
   "identifier": "helmsman",
   "extend": "worker",
   "label": "Helmsman",
+  "description": "A specialized worker. Is more efficent when controlling the ship than a worker.",
   "icon": "custom:helmsman",
   "strength": 4,
   "health": 20,

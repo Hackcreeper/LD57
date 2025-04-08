@@ -1,6 +1,7 @@
 {
   "identifier": "trade-link-broken",
   "label": "Broken Trade Link",
+  "description": "Requires 5 metal to be repaired",
   "icon": "carbon:connection-signal-off",
   "iconColor": "red",
   "type": "building",

@@ -1,6 +1,7 @@
 {
   "identifier": "brainrot",
   "label": "Brainrot",
+  "description": "What the sigma? Bruh, this will uneducate anyone! No cap.",
   "icon": "mdi:brain",
   "type": "limitedUsage",
   "buyable": true,
