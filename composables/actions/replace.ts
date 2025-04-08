@@ -12,7 +12,7 @@ export const replace: Action = (action: CardsCollectionItem['interactions'][0]['
   assert(card !== undefined, 'Card not found!')
 
   if (action.sound) {
-    const audio = new Audio('/sounds/' + action.sound)
+    const audio = new Audio('/LD57/sounds/' + action.sound)
     audio.play()
   }
 

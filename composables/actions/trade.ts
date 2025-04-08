@@ -9,7 +9,7 @@ export const trade: Action = (action: CardsCollectionItem['interactions'][0]['ac
   assert(baseCard.buyableAmount !== undefined, 'Action `trade` requires the base card to have a buyable amount!')
 
   if (action.sound && !action.instantSound) {
-    const audio = new Audio('/sounds/' + action.sound)
+    const audio = new Audio('/LD57/sounds/' + action.sound)
     audio.play()
   }
 

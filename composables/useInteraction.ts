@@ -58,7 +58,7 @@ export const useInteraction = (draggingCard: BoardCard) => {
     )
 
     if (action) {
-      const audio = new Audio('/sounds/' + action.sound)
+      const audio = new Audio('/LD57/sounds/' + action.sound)
       audio.play()
     }
 
